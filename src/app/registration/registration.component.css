@@ -1,0 +1,17 @@
+.title2{
+    display: flex;
+    justify-content: center;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 20px;
+  color: rgba(231, 150, 44, 0.795);
+  margin-bottom: 20px;
+  }
+  .form-group{
+    display: flex;
+    justify-content: center;
+    color: rgba(44, 119, 231, 0.795);
+    margin-bottom: 20px;
+}
+.form-control{
+    width: 10%;
+}
