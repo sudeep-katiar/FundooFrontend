@@ -1,26 +1,51 @@
-.title2{
+.main-div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; 
+   width: 100%;
+  
+}
+.matCard{
+  height: 70vh;
+  width: 25em;
+}
+.example-container {
     display: flex;
-    justify-content: center;
-  font-family: 'Times New Roman', Times, serif;
-  font-size: 20px;
-  color: rgba(231, 150, 44, 0.795);
-  margin-bottom: 20px;
+    flex-direction: column;
   }
-  .form-group{
-      display: flex;
-      justify-content: center;
-      color: rgba(44, 119, 231, 0.795);
-      margin-bottom: 20px;
+  
+  .example-container > * {
+    width: 100%;
   }
-  .form-control{
-      width: 10%;
-  }
+
+.Title{
+  display: flex;
+  justify-content: center;
+font-family: 'Times New Roman', Times, serif;
+font-size: 20px;
+color: rgb(108, 93, 238);
+}
+
+.Title2{
+  display: flex;
+  justify-content: center;
+font-family: 'Times New Roman', Times, serif;
+font-size: 20px;
+color: rgba(16, 14, 122, 0.795);
+margin-bottom: 20px;
+}
 .button{
-    display: flex;
-    justify-content: space-evenly;
-    margin-bottom: 10px;
-    }
-    .forgot{
-      display: flex;
-      justify-content:center;
-    }
+display: flex;
+justify-content: space-between;
+margin-bottom: 10px;
+}
+.forgot{
+  display: flex;
+  justify-content:center;
+}
+
+.Log{
+  width: 25em;
+  
+}

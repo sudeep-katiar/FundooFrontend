@@ -1,17 +1,43 @@
-<div>
-    <div class="title2">
-    <h1>FundooNote LogIn</h1></div>
-    <form>
-        <div class="form-group">
-            <label class="form-control">Email</label>
-            <input type="email" name="email">
+<div class="main-div">
+    <mat-card class="matCard" style="box-shadow: 1px 1px 7px 0px;">
+      
+      <form [formGroup]="loginForm">
+        <div >
+
+
+
+            <div fxLayout="row" fxLayoutAlign="center" style="font-size:24px; margin-bottom: 25px;">
+                <span style="color: rgb(255, 174, 0);">F</span>
+                <span style="color: rgba(0, 0, 0, 0.342);">undoo</span>
+                <span style="color: rgb(255, 174, 0);">N</span>
+                <span style="color: rgba(0, 0, 0, 0.342);">otes</span>
+              </div>
+
+
+
+
+            <div class="Title2">Login</div>
+        
+        </div>
+      
+        <div>
+
+            <mat-form-field appearance="outline" class="Log">
+                <mat-label>Email</mat-label>
+                <input matInput placeholder="email" formControlName="email">
+                <mat-icon>account_circle</mat-icon>
+              </mat-form-field>
         </div>
 
-        <div class="form-group">
-            <label class="form-control">Password</label>
-            <input type="password" name="password">
+        <div>
+            <mat-form-field appearance="outline" class="Log">
+                <mat-label>Password</mat-label>
+                <input matInput placeholder="password" [type]="hide ? 'password' : 'text'" formControlName="password">
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                  <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+              </mat-form-field>
         </div>
-
         <div class="button">
             <div>
               <a href="http://localhost:4200/register">signUp</a>
@@ -24,6 +50,7 @@
         <div class="forgot">
             <a href="http://localhost:4200/forgetPassword">Forgot Password</a>
         </div>
+      </form>
+    </mat-card>
 
-    </form>
 </div>

@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { UserServiceService } from '../service/user-service.service';
+import { UserServiceService } from '../service/userservice.service';
 import { MatSnackBar} from '@angular/material/snack-bar';
 import { NgForm, FormGroup,FormControl} from '@angular/forms';
 import { Router } from '@angular/router';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
   loginForm:FormGroup
@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     this.loginForm=new FormGroup({
-      emailId:new FormControl(),
+      email:new FormControl(),
       password:new FormControl()
     })
   }
@@ -24,19 +24,16 @@ export class LoginComponent implements OnInit {
   onSubmit(form: NgForm) {
     if (this.loginForm.invalid) {
         return;
-   }
-    console.log(this.loginForm.value);
-   
+    }
      this.userservice.login(this.loginForm.value).subscribe( (user) => {
-       console.log(user);
+       console.log(user.email);
        localStorage.setItem("token",user.response)
-       this.router.navigateByUrl("dashboard")
        this.snackbar.open('Login Successfully Done', 'Ok', {duration: 3000});
+
    },
    (error: any) => {
-       console.log( error);
-       this.snackbar.open(error.error.description, 'error', {duration: 3000});
+       this.snackbar.open(error.description, 'error', {duration: 3000});
    });
    }
-
+  
 }
