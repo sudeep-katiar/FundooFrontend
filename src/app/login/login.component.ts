@@ -25,10 +25,15 @@ export class LoginComponent implements OnInit {
     if (this.loginForm.invalid) {
         return;
     }
+    let resp
      this.userservice.login(this.loginForm.value).subscribe( (user) => {
-       console.log(user.email);
+       //console.log(user.message.data.email);
        localStorage.setItem("token",user.response)
-       this.snackbar.open('Login Successfully Done', 'Ok', {duration: 3000});
+       console.log(user.response);
+      resp =user
+       console.log("user response __________________",resp.data.email);
+       
+       //this.snackbar.open('Login Successfully Done', 'Ok', {duration: 3000});
 
    },
    (error: any) => {
