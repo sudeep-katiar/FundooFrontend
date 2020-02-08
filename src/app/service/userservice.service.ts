@@ -21,9 +21,12 @@ export class UserServiceService {
 
   login(user: any): Observable<any> {
     console.log(user);
-    //console.log(user.password);
-    // return this.http.post<any>(this.API_URL+'users/login',user,this.httpOptions);
     return this.http.post<any>("http://localhost:8080/users/login", user, this.httpOptions);
-
   }
+
+  forgetpass(user: any): Observable<any> {
+    console.log(user);
+    return this.http.post<any>("http://localhost:8080/users/forgetpassword", user,this.httpOptions);
+  }
+    
 }
