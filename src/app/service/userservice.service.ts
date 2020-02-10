@@ -16,17 +16,17 @@ export class UserServiceService {
 
   registration(user: any): Observable<any> {
     console.log(user);
-    return this.http.post<any>(this.API_URL + 'users/register', user, this.httpOptions);
+    return this.http.post<any>(this.API_URL + environment.registerURL, user, this.httpOptions);
   }
 
   login(user: any): Observable<any> {
     console.log(user);
-    return this.http.post<any>("http://localhost:8080/users/login", user, this.httpOptions);
+    return this.http.post<any>(this.API_URL + environment.loginURL, user, this.httpOptions);
   }
 
   forgetpass(user: any): Observable<any> {
     console.log(user);
-    return this.http.post<any>("http://localhost:8080/users/forgetpassword", user,this.httpOptions);
+    return this.http.post<any>(this.API_URL + environment.forgotPasswordURL, user,this.httpOptions);
   }
-    
+  
 }

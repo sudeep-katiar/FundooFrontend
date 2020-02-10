@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
       resp =user
        console.log("user response __________________",resp.data.email);
        
-       //this.snackbar.open('Login Successfully Done', 'Ok', {duration: 3000});
+       this.snackbar.open('Login Successfully Done', 'Ok', {duration: 3000});
 
    },
    (error: any) => {

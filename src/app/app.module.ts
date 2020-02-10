@@ -20,6 +20,7 @@ import { RegistrationComponent } from './registration/registration.component';
 import { LoginComponent } from './login/login.component';
 import { ForgetpasswordComponent } from './forgetpassword/forgetpassword.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ResetpasswordComponent } from './resetpassword/resetpassword.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     routingComponents,
     RegistrationComponent,
     LoginComponent,
+    ForgetpasswordComponent,
+    ResetpasswordComponent,
   ],
   imports: [
     BrowserModule,
