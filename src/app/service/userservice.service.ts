@@ -28,5 +28,10 @@ export class UserServiceService {
     console.log(user);
     return this.http.post<any>(this.API_URL + environment.forgotPasswordURL, user,this.httpOptions);
   }
+
+  resetpass(user: any, token: string): Observable<any> {
+    console.log(user);
+    return this.http.post<any>(this.API_URL + environment.resetPasswordURL + token, user);
+  }
   
 }
