@@ -4,6 +4,7 @@ import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { ForgetpasswordComponent } from './forgetpassword/forgetpassword.component';
 import { ResetpasswordComponent } from './resetpassword/resetpassword.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 
 const routes: Routes = [
@@ -13,7 +14,8 @@ const routes: Routes = [
   { path: '', component: LoginComponent },
   { path: 'register', component: RegistrationComponent },
   { path: 'forgetpassword', component: ForgetpasswordComponent },
-  { path: 'resetpassword/:token', component: ResetpasswordComponent }
+  { path: 'resetpassword/:token', component: ResetpasswordComponent },
+  { path: 'dashboard', component: DashboardComponent }
 ];
 
 @NgModule({
@@ -21,4 +23,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const routingComponents = [LoginComponent, RegistrationComponent, ForgetpasswordComponent, ResetpasswordComponent]
+export const routingComponents = [LoginComponent, RegistrationComponent, ForgetpasswordComponent, ResetpasswordComponent, DashboardComponent]

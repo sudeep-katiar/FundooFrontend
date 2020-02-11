@@ -9,6 +9,7 @@ import { FormGroup, FormControl, NgForm } from '@angular/forms';
   templateUrl: './resetpassword.component.html',
   styleUrls: ['./resetpassword.component.scss']
 })
+
 export class ResetpasswordComponent implements OnInit {
   resetPasswordForm: FormGroup;
   token: string;

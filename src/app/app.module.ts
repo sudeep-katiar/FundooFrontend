@@ -21,6 +21,7 @@ import { LoginComponent } from './login/login.component';
 import { ForgetpasswordComponent } from './forgetpassword/forgetpassword.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ResetpasswordComponent } from './resetpassword/resetpassword.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { ResetpasswordComponent } from './resetpassword/resetpassword.component'
     LoginComponent,
     ForgetpasswordComponent,
     ResetpasswordComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,
