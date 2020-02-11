@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-forgetpassword',
   templateUrl: './forgetpassword.component.html',
-  styleUrls: ['./forgetpassword.component.css']
+  styleUrls: ['./forgetpassword.component.scss']
 })
 export class ForgetpasswordComponent implements OnInit {
   forgetpassword:FormGroup
