@@ -1,0 +1,22 @@
+.main-div{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Title2{
+  display: flex;
+  justify-content: center;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 20px;
+  color: rgba(16, 14, 122, 0.795);
+  margin-bottom: 20px;
+}
+.form_field{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.form-Email{
+  width: 30em;
+}
