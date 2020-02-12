@@ -19,47 +19,53 @@
           <mat-form-field appearance="outline">
             <mat-label>firstName</mat-label>
               <input matInput placeholder="firstname" formControlName="firstname">
-              <mat-icon>perm_identity</mat-icon>
+              <mat-icon matSuffix>perm_identity</mat-icon>
           </mat-form-field>
   
           <mat-form-field appearance="outline">
             <mat-label>lastName</mat-label>
             <input matInput placeholder="lastname" formControlName="lastname">
-            <mat-icon>perm_identity</mat-icon>
+            <mat-icon matSuffix>perm_identity</mat-icon>
           </mat-form-field></div>
   
-        <div>
+        <div class="form_field">
           <mat-form-field appearance="outline">
             <mat-label>UserName</mat-label>
             <input matInput placeholder="UserName" formControlName="username">
             <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-          </mat-form-field></div>
-
-        
-  
-        <div>
-          <mat-form-field appearance="outline" class="form-Email">
-            <mat-label>Email</mat-label>
-              <input matInput placeholder="email" formControlName="email">
-              <mat-icon>account_circle</mat-icon>
-            </mat-form-field>
-  
-        </div>
-        <div class="form_field">
-          <mat-form-field appearance="outline">
-            <mat-label>Password</mat-label>
-            <input matInput placeholder="password" [type]="hide ? 'password' : 'text'" formControlName="password">
-            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-          </button>
           </mat-form-field>
-  
-  
-  
+
           <mat-form-field appearance="outline">
             <mat-label>Mobile Number</mat-label>
             <input matInput placeholder="mobilenumber" formControlName="mobile">
             <mat-icon matSuffix>phone</mat-icon>
+          </mat-form-field>
+
+        </div>
+
+        <div>
+          <mat-form-field appearance="outline" class="form-Email">
+            <mat-label>Email</mat-label>
+              <input matInput placeholder="email" formControlName="email">
+              <mat-icon matSuffix>account_circle</mat-icon>
+            </mat-form-field>
+        </div>
+
+        <div class="form_field">
+          <mat-form-field appearance="outline">
+            <mat-label>Password</mat-label>
+            <input matInput placeholder="password" [type]="hide ? 'text' : 'password'" formControlName="password">
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+              <mat-icon>{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+          </button>
+          </mat-form-field>
+  
+          <mat-form-field appearance="outline">
+            <mat-label>Confirm Password</mat-label>
+            <input matInput placeholder="password" [type]="hide1 ? 'text' : 'password'" formControlName="password">
+            <button mat-icon-button matSuffix (click)="hide1 = !hide1" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide1">
+              <mat-icon>{{hide1 ? 'visibility' : 'visibility_off'}}</mat-icon>
+          </button>
           </mat-form-field>
   
         </div>
@@ -71,4 +77,4 @@
         </div>
       </form>
     </mat-card>
-  </div>
+</div>
