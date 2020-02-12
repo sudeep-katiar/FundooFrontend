@@ -27,10 +27,11 @@ export class LoginComponent implements OnInit {
     }
     let resp
      this.userservice.login(this.loginForm.value).subscribe( (user) => {
-       //console.log(user.message.data.email);
+
+      console.log(user.response);
        localStorage.setItem("token",user.response)
-       console.log(user.response);
-      resp =user
+       this.router.navigateByUrl("dashboard")
+       resp =user
        console.log("user response __________________",resp.data.email);
        
        this.snackbar.open('Login Successfully Done', 'Ok', {duration: 3000});
