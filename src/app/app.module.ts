@@ -16,22 +16,12 @@ import { MatSelectModule } from '@angular/material/select';
 
 import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { RegistrationComponent } from './registration/registration.component';
-import { LoginComponent } from './login/login.component';
-import { ForgetpasswordComponent } from './forgetpassword/forgetpassword.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ResetpasswordComponent } from './resetpassword/resetpassword.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    routingComponents,
-    RegistrationComponent,
-    LoginComponent,
-    ForgetpasswordComponent,
-    ResetpasswordComponent,
-    DashboardComponent,
+    routingComponents
   ],
   imports: [
     BrowserModule,
