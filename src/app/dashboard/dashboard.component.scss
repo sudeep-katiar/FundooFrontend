@@ -47,43 +47,84 @@
 
 .example-container {
     width: -400px;
-    height:200vh;
+    height:100vh;
   }
   
   .example-sidenav-content {
     display: flex;
     width:400vw;
-    height: 200vh;
+    height: 100vh;
     align-items: center;
     justify-content: center;
   }
   
   .example-sidenav {
-  width: 190px;;
-
+  width: 200px;
   }
+
+  .maindiv {
+      display: inline;
+  }
+
   .notesdiv{
-      padding: 25px;
-      border-bottom: 1px solid;
+      padding: 10px;
+      border-bottom: thick double #bfc1c2;
   }
 
 .lebelmain{
-    padding: 25px;
-    border-bottom: 1px solid;
+    padding: 10px;
+    border-bottom: thick double #bfc1c2;
+}
+
+.labelmain{
+    color: grey;
+    font: small-caps;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: small;
 }
 
 .trashmain{
-    padding:25px;
-    border-bottom: 1px solid;
+    padding:10px;
+    border-bottom: thick double #bfc1c2;
 }
-.notes{
+
+.notes:hover{
     display: flex;
     align-items: center;
-    padding-bottom:inherit;
+    border: 1px solid grey;background-color: lightgrey;
+    padding-bottom: inherit;
+    border-radius: 0 10px 10px 0;
 }
-.remainder{
+.remainder:hover{
     display: flex;
     align-items: center;
+    border: 1px solid grey;background-color: lightgrey;
+    padding-bottom: inherit;
+    border-radius: 0 10px 10px 0;
+}
+
+.label:hover{
+    display: flex;
+    align-items: center;
+    border: 1px solid grey;background-color: lightgrey;
+    padding-bottom: inherit;
+    border-radius: 0 10px 10px 0;
+}
+
+.archive:hover{
+    display: flex;
+    align-items: center;background-color: lightgrey;
+    border: 1px solid grey;
+    padding-bottom: inherit;
+    border-radius: 0 10px 10px 0;
+}
+
+.trash:hover{
+    display: flex;
+    align-items: center;
+    border: 1px solid grey;background-color: lightgrey;
+    padding-bottom: inherit;
+    border-radius: 0 10px 10px 0;
 }
 
 .createnote{
