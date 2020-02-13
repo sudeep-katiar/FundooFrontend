@@ -1,0 +1,11 @@
+<div>
+    <mat-card>
+        <input matInput class="searchBar" placeholder="take a note">
+    </mat-card>
+
+    <mat-card>
+        <textarea style="border: none;" matInput type="text" class="input" placeholder="Title" [(ngModel)]="note.title"></textarea>
+        <textarea style="border: none; " matInput type="text" class="input" placeholder="take a note"[(ngModel)]="note.description"></textarea>
+    </mat-card>
+
+</div>
