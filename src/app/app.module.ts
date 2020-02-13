@@ -17,11 +17,17 @@ import { MatSelectModule } from '@angular/material/select';
 import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NotesComponent } from './dashboard/notes/notes.component';
+import { CreatenoteComponent } from './dashboard/notes/createnote/createnote.component';
+import { UpdatenoteComponent } from './dashboard/notes/updatenote/updatenote.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    routingComponents
+    routingComponents,
+    NotesComponent,
+    CreatenoteComponent,
+    UpdatenoteComponent
   ],
   imports: [
     BrowserModule,
