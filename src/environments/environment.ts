@@ -12,7 +12,9 @@ export const environment = {
   forgotPasswordURL:'forgotpassword/',
   resetPasswordURL:'resetpassword/',
 
-  createNoteURL:'create/'
+  createNoteURL:'create/',
+  displayNoteURL:'allnotes/',
+  updateNoteURL:'updatenote/'
   
 };
 

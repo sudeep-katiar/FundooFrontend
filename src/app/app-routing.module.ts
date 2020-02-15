@@ -1,13 +1,15 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { LoginComponent } from './login/login.component';
-import { RegistrationComponent } from './registration/registration.component';
-import { ForgetpasswordComponent } from './forgetpassword/forgetpassword.component';
-import { ResetpasswordComponent } from './resetpassword/resetpassword.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { NotesComponent } from './dashboard/notes/notes.component';
-import { CreatenoteComponent } from './dashboard/notes/createnote/createnote.component';
-import { UpdatenoteComponent } from './dashboard/notes/updatenote/updatenote.component';
+import { LoginComponent } from './component/login/login.component';
+import { RegistrationComponent } from './component/registration/registration.component';
+import { ForgetpasswordComponent } from './component/forgetpassword/forgetpassword.component';
+import { ResetpasswordComponent } from './component/resetpassword/resetpassword.component';
+import { DashboardComponent } from './component/dashboard/dashboard.component';
+import { NotesComponent } from './component/dashboard/notes/notes.component';
+import { CreatenoteComponent } from './component/dashboard/notes/createnote/createnote.component';
+import { UpdatenoteComponent } from './component/dashboard/notes/updatenote/updatenote.component';
+import { DisplaynoteComponent } from './component/dashboard/notes/displaynote/displaynote.component';
+
 
 
 const routes: Routes = [
@@ -23,7 +25,8 @@ const routes: Routes = [
     { path:'', redirectTo:'notes', pathMatch:'full' },
     { path: 'notes', component: NotesComponent },
     { path: 'createnote', component: CreatenoteComponent },
-    { path: 'updatenote', component: UpdatenoteComponent }
+    { path: 'updatenote', component: UpdatenoteComponent },
+    { path: 'displaynote',component: DisplaynoteComponent}
   ]}
 ];
 

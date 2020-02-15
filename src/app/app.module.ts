@@ -13,13 +13,17 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSelectModule } from '@angular/material/select';
+import { MatDialogRef } from '@angular/material';
 
 import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NotesComponent } from './dashboard/notes/notes.component';
-import { CreatenoteComponent } from './dashboard/notes/createnote/createnote.component';
-import { UpdatenoteComponent } from './dashboard/notes/updatenote/updatenote.component';
+import { NotesComponent } from './component/dashboard/notes/notes.component';
+import { CreatenoteComponent } from './component/dashboard/notes/createnote/createnote.component';
+import { UpdatenoteComponent } from './component/dashboard/notes/updatenote/updatenote.component';
+import { DisplaynoteComponent } from './component/dashboard/notes/displaynote/displaynote.component';
+import { DeletenoteComponent } from './component/dashboard/notes/deletenote/deletenote.component';
+import { FlexLayoutModule } from "@angular/flex-layout";
 
 @NgModule({
   declarations: [
@@ -27,7 +31,10 @@ import { UpdatenoteComponent } from './dashboard/notes/updatenote/updatenote.com
     routingComponents,
     NotesComponent,
     CreatenoteComponent,
-    UpdatenoteComponent
+    UpdatenoteComponent,
+    DisplaynoteComponent,
+    DeletenoteComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -45,10 +52,11 @@ import { UpdatenoteComponent } from './dashboard/notes/updatenote/updatenote.com
     MatIconModule,
     MatMenuModule,
     MatSidenavModule,
+    MatSelectModule,
+    FlexLayoutModule,
     MatDialogModule,
-    MatSelectModule
   ],
-  providers: [],
+  providers: [MatDialogRef],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
