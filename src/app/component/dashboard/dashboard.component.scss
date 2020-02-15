@@ -1,0 +1,133 @@
+.Main{
+    display: flex;
+}
+
+.sideNavIcon{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    min-width: 156px;
+    cursor: pointer;
+}
+.refresh{
+    display: flex;
+    justify-content: space-around;
+    width: 96px;
+}
+.appBarLastIcon{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 7em;
+}
+.searchWhole{
+    display: flex;
+    justify-content: space-between;
+    width: 47em;
+    margin-left: 8em;
+}
+.searchbar{
+    display: flex;
+    align-items: center;
+    border: 1px solid;
+    background-color: #fff;
+    border-radius: 7px;
+    height: 44px;
+    width: 35em;
+}
+.input{
+    width: 47em;
+    padding: 10px;
+    border-style: none;
+}
+.searchIcon{
+    display: flex;
+    align-items: center;
+}
+
+.example-container {
+    width: -400px;
+    height:100vh;
+  }
+  
+  .example-sidenav-content {
+    display: flex;
+    width:400vw;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .example-sidenav {
+  width: 200px;
+  }
+
+  .maindiv {
+      display: inline;
+  }
+
+  .notesdiv{
+      padding: 10px;
+      border-bottom: thick double #bfc1c2;
+  }
+
+.lebelmain{
+    padding: 10px;
+    border-bottom: thick double #bfc1c2;
+}
+
+.labelmain{
+    color: grey;
+    font: small-caps;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: small;
+}
+
+.trashmain{
+    padding:10px;
+    border-bottom: thick double #bfc1c2;
+}
+
+.notes:hover{
+    display: flex;
+    align-items: center;
+    border: 1px solid grey;background-color: lightgrey;
+    padding-bottom: inherit;
+    border-radius: 0 10px 10px 0;
+}
+.remainder:hover{
+    display: flex;
+    align-items: center;
+    border: 1px solid grey;background-color: lightgrey;
+    padding-bottom: inherit;
+    border-radius: 0 10px 10px 0;
+}
+
+.label:hover{
+    display: flex;
+    align-items: center;
+    border: 1px solid grey;background-color: lightgrey;
+    padding-bottom: inherit;
+    border-radius: 0 10px 10px 0;
+}
+
+.archive:hover{
+    display: flex;
+    align-items: center;background-color: lightgrey;
+    border: 1px solid grey;
+    padding-bottom: inherit;
+    border-radius: 0 10px 10px 0;
+}
+
+.trash:hover{
+    display: flex;
+    align-items: center;
+    border: 1px solid grey;background-color: lightgrey;
+    padding-bottom: inherit;
+    border-radius: 0 10px 10px 0;
+}
+
+.createnote{
+    display: inline;
+    justify-content: center;
+}
