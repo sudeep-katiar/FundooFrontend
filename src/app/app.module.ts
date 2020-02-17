@@ -13,7 +13,6 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSelectModule } from '@angular/material/select';
-import { MatDialogRef } from '@angular/material';
 
 import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -24,6 +23,8 @@ import { UpdatenoteComponent } from './component/dashboard/notes/updatenote/upda
 import { DisplaynoteComponent } from './component/dashboard/notes/displaynote/displaynote.component';
 import { DeletenoteComponent } from './component/dashboard/notes/deletenote/deletenote.component';
 import { FlexLayoutModule } from "@angular/flex-layout";
+import { SidenavComponent } from './component/sidenav/sidenav.component';
+import { IconlistComponent } from './component/iconlist/iconlist.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,8 @@ import { FlexLayoutModule } from "@angular/flex-layout";
     UpdatenoteComponent,
     DisplaynoteComponent,
     DeletenoteComponent,
+    SidenavComponent,
+    IconlistComponent,
     
   ],
   imports: [
@@ -56,7 +59,7 @@ import { FlexLayoutModule } from "@angular/flex-layout";
     FlexLayoutModule,
     MatDialogModule,
   ],
-  providers: [MatDialogRef],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
