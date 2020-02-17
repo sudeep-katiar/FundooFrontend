@@ -15,8 +15,8 @@ export class UpdatenoteComponent implements OnInit {
   notes: Note = new Note();
   note: any;
 
-  constructor(public dialogRef: MatDialogRef<DisplaynoteComponent>,
-    @Inject(MAT_DIALOG_DATA) public data, public dialogref: MatDialogRef<DisplaynoteComponent>, private noteservice: NoteserviceService, private snackbar: MatSnackBar) {
+  constructor(public dialog: DisplaynoteComponent,
+    @Inject(MAT_DIALOG_DATA) public data, private noteservice: NoteserviceService, private snackbar: MatSnackBar) {
       this.note = this.data.note;
      }
 
