@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NoteserviceService } from 'src/app/service/noteservice.service';
 import { MatDialog } from '@angular/material/dialog';
+import { UpdatenoteComponent } from '../updatenote/updatenote.component';
 
 @Component({
   selector: 'app-displaynote',
@@ -15,16 +16,17 @@ export class DisplaynoteComponent implements OnInit {
   constructor(private noteservice: NoteserviceService, public dialog:MatDialog) { }
 
   ngOnInit() {
-    this.noteservice.getAllNotes(localStorage.getItem('token')).subscribe((response:any)=>
+    this.noteservice.getAllNotes(localStorage.getItem('token')).subscribe((response:any) =>
     {
       console.log(response);
-      this.notes=response.object;
+      this.notes=response.data;
     })
   }
   openDialog(note:any)
   {
     console.log("open"+note.id);
 
+    
   }
 
 }
