@@ -26,7 +26,11 @@ export class DisplaynoteComponent implements OnInit {
   {
     console.log("open"+note.id);
 
-    
+    const dialogref=this.dialog.open(UpdatenoteComponent, {
+      panelClass: 'custom-dialog-container' ,
+      width:'600px',
+      data:{note}
+    });
   }
 
 }
