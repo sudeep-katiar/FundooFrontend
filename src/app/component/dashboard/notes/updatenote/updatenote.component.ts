@@ -1,9 +1,8 @@
 import { Component, OnInit, Input, Inject } from '@angular/core';
 import { Note } from 'src/app/model/note.model';
-import { NoteserviceService } from 'src/app/service/noteservice.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { DisplaynoteComponent } from '../displaynote/displaynote.component';
+import { NoteserviceService } from 'src/app/service/noteservice.service';
 
 @Component({
   selector: 'app-updatenote',
@@ -15,9 +14,9 @@ export class UpdatenoteComponent implements OnInit {
   notes: Note = new Note();
   note: any;
 
-  constructor(public dialog: DisplaynoteComponent,
-    @Inject(MAT_DIALOG_DATA) public data, private noteservice: NoteserviceService, private snackbar: MatSnackBar) {
-      this.note = this.data.note;
+  constructor(public dialogRef: MatDialogRef<UpdatenoteComponent>,
+    @Inject(MAT_DIALOG_DATA)public data,public dialogref:MatDialogRef<UpdatenoteComponent>,private noteservice:NoteserviceService,private snackbar:MatSnackBar) { 
+    this.note=this.data.note;
      }
 
   ngOnInit() {
