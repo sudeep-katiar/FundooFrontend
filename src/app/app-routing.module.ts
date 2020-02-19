@@ -6,9 +6,8 @@ import { ForgetpasswordComponent } from './component/forgetpassword/forgetpasswo
 import { ResetpasswordComponent } from './component/resetpassword/resetpassword.component';
 import { DashboardComponent } from './component/dashboard/dashboard.component';
 import { NotesComponent } from './component/dashboard/notes/notes.component';
-import { CreatenoteComponent } from './component/dashboard/notes/createnote/createnote.component';
 import { UpdatenoteComponent } from './component/dashboard/notes/updatenote/updatenote.component';
-import { DisplaynoteComponent } from './component/dashboard/notes/displaynote/displaynote.component';
+import { CreatenoteComponent } from './component/dashboard/notes/createnote/createnote.component';
 
 
 
@@ -20,15 +19,13 @@ const routes: Routes = [
   { path: 'register', component: RegistrationComponent },
   { path: 'forgetpassword', component: ForgetpasswordComponent },
   { path: 'resetpassword/:token', component: ResetpasswordComponent },
-  { path: 'dashboard', component: DashboardComponent,
+  { path: "dashboard", component: DashboardComponent,
   children:[
-    { path:'', redirectTo:'notes', pathMatch:'full' },
-    { path: 'notes', component: NotesComponent ,
-    children:[
-      {path:'',redirectTo:'notes', pathMatch:'full'},
-    { path: 'createnote', component: CreatenoteComponent },
+    // { path:'', redirectTo:'notes', pathMatch:'full' },
+    {path:'', component: NotesComponent},
+    { path: 'notes', component: NotesComponent},
     { path: 'updatenote', component: UpdatenoteComponent },
-    { path: 'displaynote',component: DisplaynoteComponent}]}
+    {path:"createnote",component:CreatenoteComponent}
   ]}
 ];
 
