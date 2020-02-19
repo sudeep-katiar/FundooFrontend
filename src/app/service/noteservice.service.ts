@@ -27,9 +27,9 @@ export class NoteserviceService {
     return this.http.delete<any>(this.noteURl+"notes/delete/"+id,{headers: new HttpHeaders().set('token',  token) })
   }
 
-  updateNote(Note: any, token: string, noteId: Number): Observable<any> {
-    console.log(noteId);
-    return this.http.post<any>(this.noteURl + environment.updateNoteURL + token, Note)
+  updateNote(Note: any, token: string, id: any): Observable<any> {
+    console.log(id);
+    return this.http.post<any>(this.noteURl + environment.updateNoteURL + token,{headers: new HttpHeaders().set('id', id) }, Note)
   }
 
   getTrashedNotes(token:string):Observable<any>{
