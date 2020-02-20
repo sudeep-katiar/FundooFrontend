@@ -1,13 +1,13 @@
 <div [ngStyle]="{'background': color}">
     <div>
-      <input [ngStyle]="{'background': color}" matInput type="text" value="{{notes.title}}" #title>
+      <input [ngStyle]="{'background': color}" matInput type="text" value="{{note.title}}" #title>
     </div>
     <div>
-      <input [ngStyle]="{'background': color}" matInput type="text" value="{{notes.content}}" #content>
+      <input [ngStyle]="{'background': color}" matInput type="text" value="{{note.content}}" #content>
     </div>
     <div fxLayout="row">
       <app-iconlist></app-iconlist>
-      <button type="submit" (click)="updateNote(title.value, content.value,id?.value)" mat-button NoteId="SUBMIT">
+      <button type="submit" (click)="updateNote(title.value, content.value,note.id)" mat-button NoteId="SUBMIT">
         SAVE
       </button>
     </div>
