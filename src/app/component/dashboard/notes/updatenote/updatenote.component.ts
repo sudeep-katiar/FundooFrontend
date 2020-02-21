@@ -24,7 +24,7 @@ export class UpdatenoteComponent implements OnInit {
 
   }
 
-  updateNote(title: string, content: string, id: string) {
+  updateNote(title: string, content: string, id: number) {
     this.notes.title = title;
     this.notes.content = content;
     this.notes.id = id;console.log("note");
