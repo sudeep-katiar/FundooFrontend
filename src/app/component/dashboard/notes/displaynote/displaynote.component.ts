@@ -10,26 +10,33 @@ import { UpdatenoteComponent } from '../updatenote/updatenote.component';
 })
 export class DisplaynoteComponent implements OnInit {
 
-  notes:[];
-  getAllNotes:[];
+  notes: [];
+  getAllNotes: [];
 
-  constructor(private noteservice: NoteserviceService, public dialog:MatDialog) { }
+  constructor(private noteservice: NoteserviceService, public dialog: MatDialog) { }
 
   ngOnInit() {
-    this.noteservice.getAllNotes(localStorage.getItem('token')).subscribe((response:any) =>
-    {
-      console.log(response);
-      this.notes=response.data;
-    })
+    this.noteservice.autoRefresh$.subscribe(()=>{
+      this.displayNotes();
+    }); 
+    this.displayNotes();
   }
-  openDialog(note:any)
-  {
-    console.log("open"+note.id);
 
-    const dialogref=this.dialog.open(UpdatenoteComponent, {
-      panelClass: 'custom-dialog-container' ,
-      width:'600px',
-      data:{note}
+  displayNotes() {
+    this.noteservice.getAllNotes(localStorage.getItem('token')).subscribe((response: any) => {
+      console.log(response);
+      this.notes = response.data;
+    })
+  } 
+  
+  
+  openDialog(note: any) {
+    console.log("open" + note.id);
+
+    const dialogref = this.dialog.open(UpdatenoteComponent, {
+      panelClass: 'custom-dialog-container',
+      width: '500px',
+      data: { note }
     });
   }
 

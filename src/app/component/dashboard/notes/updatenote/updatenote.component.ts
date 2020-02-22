@@ -21,20 +21,20 @@ export class UpdatenoteComponent implements OnInit {
 
   ngOnInit() {
     console.log(this.note);
-
   }
 
   updateNote(title: string, content: string, id: number) {
-    this.notes.title = title;
+    
+  this.notes.title = title;
     this.notes.content = content;
-    this.notes.id = id;console.log("note");
+    this.notes.id =id;console.log("note");
     this.noteservice.updateNote(this.notes, localStorage.getItem('token'), this.notes.id).subscribe((notes) => {
       console.log(notes);
       this.snackbar.open('Note updated successfully','OK', {duration: 3000});     
       },
       (error:any) => {
         console.log("error"+error);
-        // this.snackbar.open(error.error.data, 'error', {duration:3000});
+        this.snackbar.open(error.error.data, 'error', {duration:3000});
       }
     );
   }

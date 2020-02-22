@@ -14,8 +14,14 @@ export const environment = {
 
   createNoteURL:'notes/create/',
   displayNoteURL:'notes/allnotes/',
-  updateNoteURL:'notes/updatenote/'
-  
+  updateNoteURL:'notes/updatenote/',
+  deleteNoteURL:'notes/deleteORrestore/',
+  restoreNoteURL:'notes/deleteORrestore/',
+  pinNoteURL:'notes/pinunpin/',
+  archiveNoteURL:'notes/archive/',
+  colorNoteURL:'notes/addcolor/',
+  reminderNoteURL:'notes/reminder/',
+  emptyBinURL:'notes/emptybin/'
 };
 
 /*

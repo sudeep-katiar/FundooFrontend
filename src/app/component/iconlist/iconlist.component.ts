@@ -22,4 +22,115 @@ export class IconlistComponent implements OnInit {
   ngOnInit() {
   }
 
+  getNoteId(items:any){
+    this.notes.id=items.id;
+  }
+
+  delete(){
+    this.noteservice.deleteNote(this.Token,this.notes.id).subscribe((note) =>
+    {
+      this.snackbar.open('Note deleted successfully', 'Ok', { duration: 3000 });
+         
+    },
+    (error: any) => {
+      console.log("hello"+error);
+      this.snackbar.open(error.error.description, 'error', { duration: 3000 });
+    });
+
+  }
+
+  restore(){
+    this.noteservice.restoreNote(this.Token,this.notes.id).subscribe((note) =>
+    {
+      this.snackbar.open('Note restored successfully', 'OK', {duration: 3000});
+    },
+    (error:any) => {
+      console.log("error "+error);
+      this.snackbar.open(error.error.description, 'error', {duration: 3000});
+    });
+  }
+
+  pin(){
+    this.noteservice.pinNotes(this.Token,this.notes.id).subscribe((note) =>
+    {
+      this.snackbar.open('Note pinned successfully', 'Ok', { duration: 3000 });
+         
+    },
+    (error: any) => {
+      console.log("hello"+error);
+      this.snackbar.open(error.error.description, 'error', { duration: 3000 });
+    });
+
+  }
+
+  unPinned(){
+    this.noteservice.unPinNotes(this.Token,this.notes.id).subscribe((note) =>
+    {
+
+      this.snackbar.open('Note unpinned successfully', 'Ok', { duration: 3000 });
+         
+    },
+    (error: any) => {
+      this.snackbar.open(error.error.description, 'error', { duration: 3000 });
+    });
+
+  }
+
+  archieve(){
+    this.noteservice.archieveNote(this.Token,this.notes.id).subscribe((note) =>
+    {
+
+      this.snackbar.open('Note archieved successfully', 'Ok', { duration: 3000 });
+         
+    },
+    (error: any) => {
+      this.snackbar.open(error.error.description, 'error', { duration: 3000 });
+    });
+
+  }
+
+
+  unarchieve(){
+    this.noteservice.unarchieveNote(this.Token,this.notes.id).subscribe((note) =>
+    {
+
+      this.snackbar.open('Note unarchieved successfully', 'Ok', { duration: 3000 });
+         
+    },
+    (error: any) => {
+      this.snackbar.open(error.error.description, 'error', { duration: 3000 });
+    });
+
+  }
+
+
+  emptybin(){
+    this.noteservice.emptyBin(this.Token,this.notes.id).subscribe((note) =>
+    {
+
+      this.snackbar.open('Note trashed successfully', 'Ok', { duration: 3000 });
+         
+    },
+    (error: any) => {
+      this.snackbar.open(error.error.description, 'error', { duration: 3000 });
+    });
+
+  }
+
+  remainder(){
+
+  }
+
+  collabrator(){
+
+  }
+
+  addImages(){
+
+  }
+
+  changeColor(){
+
+  }
+
 }
