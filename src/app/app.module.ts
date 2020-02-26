@@ -17,14 +17,15 @@ import { MatSelectModule } from '@angular/material/select';
 import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NotesComponent } from './component/dashboard/notes/notes.component';
-import { CreatenoteComponent } from './component/dashboard/notes/createnote/createnote.component';
-import { UpdatenoteComponent } from './component/dashboard/notes/updatenote/updatenote.component';
-import { DisplaynoteComponent } from './component/dashboard/notes/displaynote/displaynote.component';
-import { DeletenoteComponent } from './component/dashboard/notes/deletenote/deletenote.component';
+import { NotesComponent } from './component/notes/notes.component';
+import { CreatenoteComponent } from './component/createnote/createnote.component';
+import { UpdatenoteComponent } from './component/updatenote/updatenote.component';
+import { DisplaynoteComponent } from './component/displaynote/displaynote.component';
+import { DeletenoteComponent } from './component/deletenote/deletenote.component';
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { SidenavComponent } from './component/sidenav/sidenav.component';
 import { IconlistComponent } from './component/iconlist/iconlist.component';
+import { PinNotesComponent } from './component/pin-notes/pin-notes.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { IconlistComponent } from './component/iconlist/iconlist.component';
     DeletenoteComponent,
     SidenavComponent,
     IconlistComponent,
+    PinNotesComponent
     
   ],
   imports: [
