@@ -5,9 +5,9 @@ import { RegistrationComponent } from './component/registration/registration.com
 import { ForgetpasswordComponent } from './component/forgetpassword/forgetpassword.component';
 import { ResetpasswordComponent } from './component/resetpassword/resetpassword.component';
 import { DashboardComponent } from './component/dashboard/dashboard.component';
-import { NotesComponent } from './component/dashboard/notes/notes.component';
-import { UpdatenoteComponent } from './component/dashboard/notes/updatenote/updatenote.component';
-import { CreatenoteComponent } from './component/dashboard/notes/createnote/createnote.component';
+import { NotesComponent } from './component/notes/notes.component';
+import { UpdatenoteComponent } from './component/updatenote/updatenote.component';
+import { CreatenoteComponent } from './component/createnote/createnote.component';
 
 
 
@@ -23,6 +23,7 @@ const routes: Routes = [
   children:[
     // { path:'', redirectTo:'notes', pathMatch:'full' },
     {path:'', component: NotesComponent},
+    {path:'refresh', component: NotesComponent},
     { path: 'notes', component: NotesComponent},
     { path: 'updatenote', component: UpdatenoteComponent },
     {path:"createnote",component:CreatenoteComponent}
