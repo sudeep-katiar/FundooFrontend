@@ -1,0 +1,36 @@
+<div class="main">
+    <mat-card style=" width: 29em; border-radius: 13px;"  *ngIf="!popup" (click)="onPopup()" class="mat-card" fxLayout="row" >
+
+        <input matInput class="searchBar" placeholder="take a note...">
+
+
+    </mat-card>
+
+    <mat-card  style=" width: 29em; border-radius: 13px;" *ngIf="popup" class="mat1-card" fxLayout="column" >
+        
+        <div class="pinNotes">
+            <input style="border: none; height: 40px; width: 392px;" matInput type="text" class="input" placeholder="Title" [(ngModel)]="note.title"/>
+
+            <button *ngIf="note.is_pinned " mat-icon-button matTooltip="unpin" (click)="pinned('unpinned',note)"
+                class="button">
+                <img class="image" style="border: none; width: 93%;" src="/assets/icon/pinned.svg" height="50%"
+                    id="imgRem">
+            </button>
+            <button *ngIf="!note.is_pinned" mat-icon-button matTooltip="pin" (click)="pinned('pinned',note)"
+                class="button">
+                <img class="image" style="border: none; width: 93%; " src="/assets/icon/unpin.svg" height="50%"
+                    id="imgRem">
+            </button>
+        </div>
+   
+        <textarea style="border: none;  height: 60px;" matInput type="text" class="input" placeholder="take a note"
+            [(ngModel)]="note.content"></textarea>
+       
+        <div class="icon" style="display:flex; justify-content: space-between; width: 100%;">
+            <div class="iconlist" >
+                <app-iconlist style="width: 80%; display: flex;align-items: center; justify-content: space-between; height: 1px;"></app-iconlist>
+            </div>
+            <div (click)="onSubmit()"><button style="border-radius: 10px 10px 10px 10px; outline: none;" class="close">close</button></div>
+        </div>
+    </mat-card>
+</div>

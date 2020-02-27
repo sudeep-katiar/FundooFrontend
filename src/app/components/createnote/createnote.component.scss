@@ -1,0 +1,36 @@
+.main{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 4%;
+    margin-bottom: 4%;
+}
+
+.input {
+    outline: none;
+}
+
+.searchBar
+{
+   border:none;
+   outline:none;
+}
+
+.iconlist{
+    margin-top: 3%;
+}
+
+.close:hover {
+    background-color: linen;
+    outline:none;
+}
+
+.close:active {
+    border:none;
+    outline:none;
+    border-radius: 10px 10px 10px 10px;
+}
+
+.pinNotes {
+    display: inline-flex;
+}
