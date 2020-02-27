@@ -1,19 +1,18 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { LoginComponent } from './component/login/login.component';
-import { RegistrationComponent } from './component/registration/registration.component';
-import { ForgetpasswordComponent } from './component/forgetpassword/forgetpassword.component';
-import { ResetpasswordComponent } from './component/resetpassword/resetpassword.component';
-import { DashboardComponent } from './component/dashboard/dashboard.component';
-import { NotesComponent } from './component/notes/notes.component';
-import { UpdatenoteComponent } from './component/updatenote/updatenote.component';
-import { CreatenoteComponent } from './component/createnote/createnote.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegistrationComponent } from './components/registration/registration.component';
+import { ForgetpasswordComponent } from './components/forgetpassword/forgetpassword.component';
+import { ResetpasswordComponent } from './components/resetpassword/resetpassword.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { NotesComponent } from './components/notes/notes.component';
+import { UpdatenoteComponent } from './components/updatenote/updatenote.component';
+import { CreatenoteComponent } from './components/createnote/createnote.component';
 
 
 
 const routes: Routes = [
   // {path:'', redirectTo: '/login', pathMatch: 'full'},
-  // {path: 'login', component: LoginComponent},
   { path: 'login', component: LoginComponent },
   { path: '', component: LoginComponent },
   { path: 'register', component: RegistrationComponent },
