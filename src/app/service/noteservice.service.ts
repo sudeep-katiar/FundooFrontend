@@ -9,6 +9,7 @@ import { tap } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class NoteserviceService {
+  [x: string]: any;
   private noteURl=environment.notesApiUrl;
   private _autoRefresh$ = new Subject();
   private httpOptions = {
@@ -28,7 +29,7 @@ export class NoteserviceService {
   }
 
   getAllNotes(token:string):Observable<any> {
-    return this.http.post<any>(this.noteURl + environment.displayNoteURL,Note,{headers: new HttpHeaders().set('token', token) });
+    return this.http.post<any>(this.noteURl + environment.allNoteURL,Note,{headers: new HttpHeaders().set('token', token) });
   }
 
   updateNote(Note: any, token: string, id: any): Observable<any> {
@@ -48,12 +49,15 @@ export class NoteserviceService {
 
   pinNotes(token:string,id:any):Observable<any>{
 
-    return this.http.post<any>(this.noteURl + environment.pinNoteURL + id,{headers: new HttpHeaders().set('token',  token) })   
+    return this.http.post<any>(`${this.noteURl}${environment.pinNoteURL}?id=${id}`,{headers: new HttpHeaders().set('token',  localStorage.token) })   
   }
 
-  unPinNotes(token:string,id:any):Observable<any>{
+  getPinnedNotes(token:string) {
+    return this.http.get<any>(this.noteURl + environment.allPinnedNoteURL,{headers: new HttpHeaders().set('token',  token) });
+  }
 
-    return this.http.post<any>(this.noteURl + environment.pinNoteURL + id,{headers: new HttpHeaders().set('token',  token) })
+  getUnpinnedNotes(token:string) {
+    return this.http.get<any>(this.noteURl + environment.allUnpinnedNoteURL,{headers: new HttpHeaders().set('token',  token) });
   }
 
   archieveNote(token:string,id:any):Observable<any>{
