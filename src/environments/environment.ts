@@ -13,7 +13,7 @@ export const environment = {
   resetPasswordURL:'resetpassword/',
 
   createNoteURL:'notes/create/',
-  displayNoteURL:'notes/allnotes/',
+  allNoteURL:'notes/allnotes/',
   updateNoteURL:'notes/updatenote/',
   deleteNoteURL:'notes/deleteORrestore/',
   restoreNoteURL:'notes/deleteORrestore/',
@@ -21,7 +21,12 @@ export const environment = {
   archiveNoteURL:'notes/archive/',
   colorNoteURL:'notes/addcolor/',
   reminderNoteURL:'notes/reminder/',
-  emptyBinURL:'notes/emptybin/'
+  emptyBinURL:'notes/emptybin/',
+  allPinnedNoteURL:'notes/allpinnednotes',
+  allUnpinnedNoteURL:'notes/allunpinnednotes',
+  allTrashedNoteURL:'notes/alltrashednotes',
+  allArchivedNoteURL:'notes/getallarchived',
+  allUnarchivedURL:'notes/getallunarchived'
 };
 
 /*
