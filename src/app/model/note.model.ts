@@ -1,4 +1,5 @@
 export class Note {
+    [x: string]: any;
     id:number;
     title:string;
     content:string;
