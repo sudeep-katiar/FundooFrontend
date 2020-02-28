@@ -49,7 +49,9 @@ export class NoteserviceService {
 
   pinNotes(token:string,id:any):Observable<any>{
 
-    return this.http.post<any>(`${this.noteURl}${environment.pinNoteURL}?id=${id}`,{headers: new HttpHeaders().set('token',  localStorage.token) })   
+    return this.http.post<any>(`${this.noteURl}${environment.pinNoteURL}?id=${id}`,{},{headers: new HttpHeaders().set('token',  localStorage.token) })  .pipe(tap(() => {
+      this._autoRefresh$.next();
+    }));
   }
 
   getPinnedNotes(token:string) {
@@ -58,6 +60,10 @@ export class NoteserviceService {
 
   getUnpinnedNotes(token:string) {
     return this.http.get<any>(this.noteURl + environment.allUnpinnedNoteURL,{headers: new HttpHeaders().set('token',  token) });
+  }
+
+  moveToArchiveNote(id: any) {
+    return this.http.post<any>(`${this.noteURl}${environment.archiveNoteURL}/${id}`, {}, { headers: new HttpHeaders().set('token', localStorage.token) });
   }
 
   archieveNote(token:string,id:any):Observable<any>{
