@@ -1,26 +1,33 @@
-<div class="main" fxLayout="row" fxLayoutAlign="space-around center">
-    <div class="icon">
-        <img src="assets/icon/remainder.svg" (click)=remainder()/>
-    </div>
+<div class="main" fxLayout="row" fxLayoutAlign="space-between center">
+    <button mat-icon-button>
+        <img src="../../../assets/icon/remainder.svg" matTooltip="Add Reminder" (click)="open(notesicon.id)"/>
+    </button>
 
-    <div class="icon">
-        <img src="assets/icon/collab.svg" (click)=collabrator()/>
-    </div>
+    <button mat-icon-button>
+        <img src="../../../assets/icon/collab.svg" matTooltip="Add Collobrate" (click)=collabrator()/>
+    </button>
 
-    <div class="icon">
-        <img src="assets/icon/colorpalate.svg" (click)=changeColor()/>
-    </div>
+    <button mat-icon-button>
+        <img src="assets/icon/colorpalate.svg" (click)="onClickColorPlate()" matTooltip="Add Color"/>
+    </button>
 
-    <div class="icon">
-        <img src="assets/icon/addImage.svg" (click)=addImages()/>
-    </div>
+    <button mat-icon-button>
+        <img src="assets/icon/addImage.svg" matTooltip="Add Image" (click)=addImages()/>
+    </button>
 
-    <div class="icon">
-        <img src="assets/icon/archive-24px.svg" (click)=archieve()/>
-    </div>
+    <button *ngIf="!isArchive" mat-icon-button>
+        <img src="assets/icon/archive-24px.svg" (click)="onClickArchive()" matTooltip="Archive">
+    </button>
+    <button *ngIf="isArchive">
+        <img src="assets/icon/unarchive-24px.svg" (click)="onClickArchive()" matTooltip="UnArchive">
+    </button>
+<!-- 
+    <button mat-icon-button>
+        <img src="assets/icon/archive-24px.svg" (click)=archive()/>
+    </button> -->
 
-    <div class="icon">
+    <button mat-icon-button>
         <img src="assets/icon/more_vert-24px.svg"/>
-    </div>
+    </button>
  
 </div>
