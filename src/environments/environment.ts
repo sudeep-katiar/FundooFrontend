@@ -18,7 +18,7 @@ export const environment = {
   deleteNoteURL:'notes/deleteORrestore/',
   restoreNoteURL:'notes/deleteORrestore/',
   pinNoteURL:'notes/pinunpin/',
-  archiveNoteURL:'notes/archive/',
+  archiveNoteURL:'notes/archive',
   colorNoteURL:'notes/addcolor/',
   reminderNoteURL:'notes/reminder/',
   emptyBinURL:'notes/emptybin/',
