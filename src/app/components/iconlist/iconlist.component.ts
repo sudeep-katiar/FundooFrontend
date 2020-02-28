@@ -10,9 +10,9 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrls: ['./iconlist.component.scss']
 })
 export class IconlistComponent implements OnInit {
-  @Input() noteData:any;
+  // @Input() noteData:any;
    notes:Note = new Note();
-   note:any;
+   @Input() note:Note;
   error: any;
 
   constructor(private router:Router, private noteservice:NoteserviceService, private snackbar:MatSnackBar) { }
@@ -27,7 +27,7 @@ export class IconlistComponent implements OnInit {
   }
 
   delete(){
-    this.noteservice.deleteNote(this.Token,this.notes.id).subscribe((note) =>
+    this.noteservice.deleteNote(this.Token,this.note.id).subscribe((note) =>
     {
       this.snackbar.open('Note deleted successfully', 'Ok', { duration: 3000 });
          
@@ -40,7 +40,7 @@ export class IconlistComponent implements OnInit {
   }
 
   restore(){
-    this.noteservice.restoreNote(this.Token,this.notes.id).subscribe((note) =>
+    this.noteservice.restoreNote(this.Token,this.note.id).subscribe((note) =>
     {
       this.snackbar.open('Note restored successfully', 'OK', {duration: 3000});
     },
@@ -51,7 +51,7 @@ export class IconlistComponent implements OnInit {
   }
 
   pin(){
-    this.noteservice.pinNotes(this.Token,this.notes.id).subscribe((note) =>
+    this.noteservice.pinNotes(this.Token,this.note.id).subscribe((note) =>
     {
       this.snackbar.open('Note pinned successfully', 'Ok', { duration: 3000 });
          
@@ -64,7 +64,7 @@ export class IconlistComponent implements OnInit {
   }
 
   unPinned(){
-    this.noteservice.unPinNotes(this.Token,this.notes.id).subscribe((note) =>
+    this.noteservice.unPinNotes(this.Token,this.note.id).subscribe((note) =>
     {
 
       this.snackbar.open('Note unpinned successfully', 'Ok', { duration: 3000 });
@@ -76,8 +76,18 @@ export class IconlistComponent implements OnInit {
 
   }
 
+  onClickArchive() {
+    console.log("id: "+this.note.id);
+    this.noteservice.moveToArchiveNote(this.note.id).subscribe((response) => {
+      this.snackbar.open("Note unpinned and Archived", "OK", { duration: 3000 });
+    },
+    (error: any) => {
+        this.snackbar.open("rror.error.description", "OK", { duration: 3000 });
+    });
+  }
+
   archieve(){
-    this.noteservice.archieveNote(this.Token,this.notes.id).subscribe((note) =>
+    this.noteservice.archieveNote(this.Token,this.note.id).subscribe((note) =>
     {
 
       this.snackbar.open('Note archieved successfully', 'Ok', { duration: 3000 });
@@ -91,7 +101,7 @@ export class IconlistComponent implements OnInit {
 
 
   unarchieve(){
-    this.noteservice.unarchieveNote(this.Token,this.notes.id).subscribe((note) =>
+    this.noteservice.unarchieveNote(this.Token,this.note.id).subscribe((note) =>
     {
 
       this.snackbar.open('Note unarchieved successfully', 'Ok', { duration: 3000 });
@@ -105,7 +115,7 @@ export class IconlistComponent implements OnInit {
 
 
   emptybin(){
-    this.noteservice.emptyBin(this.Token,this.notes.id).subscribe((note) =>
+    this.noteservice.emptyBin(this.Token,this.note.id).subscribe((note) =>
     {
 
       this.snackbar.open('Note trashed successfully', 'Ok', { duration: 3000 });
@@ -132,5 +142,7 @@ export class IconlistComponent implements OnInit {
   changeColor(){
 
   }
+
+  
 
 }
