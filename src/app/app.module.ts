@@ -26,6 +26,10 @@ import { FlexLayoutModule } from "@angular/flex-layout";
 import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { IconlistComponent } from './components/iconlist/iconlist.component';
 import { PinNotesComponent } from './components/pin-notes/pin-notes.component';
+import { ArchiveComponent } from './components/archive/archive.component';
+import { LabelComponent } from './components/label/label.component';
+import { ReminderComponent } from './components/reminder/reminder.component';
+import { TrashComponent } from './components/trash/trash.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +42,11 @@ import { PinNotesComponent } from './components/pin-notes/pin-notes.component';
     DeletenoteComponent,
     SidenavComponent,
     IconlistComponent,
-    PinNotesComponent
+    PinNotesComponent,
+    ArchiveComponent,
+    LabelComponent,
+    ReminderComponent,
+    TrashComponent
     
   ],
   imports: [

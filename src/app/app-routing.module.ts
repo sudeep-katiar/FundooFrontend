@@ -8,6 +8,10 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { NotesComponent } from './components/notes/notes.component';
 import { UpdatenoteComponent } from './components/updatenote/updatenote.component';
 import { CreatenoteComponent } from './components/createnote/createnote.component';
+import { ArchiveComponent } from './components/archive/archive.component';
+import { LabelComponent } from './components/label/label.component';
+import { ReminderComponent } from './components/reminder/reminder.component';
+import { TrashComponent } from './components/trash/trash.component';
 
 
 
@@ -18,14 +22,17 @@ const routes: Routes = [
   { path: 'register', component: RegistrationComponent },
   { path: 'forgetpassword', component: ForgetpasswordComponent },
   { path: 'resetpassword/:token', component: ResetpasswordComponent },
-  { path: "dashboard", component: DashboardComponent,
+  { path: 'dashboard', component: DashboardComponent,
   children:[
     // { path:'', redirectTo:'notes', pathMatch:'full' },
     {path:'', component: NotesComponent},
-    {path:'refresh', component: NotesComponent},
     { path: 'notes', component: NotesComponent},
     { path: 'updatenote', component: UpdatenoteComponent },
-    {path:"createnote",component:CreatenoteComponent}
+    {path:'createnote',component:CreatenoteComponent},
+    {path:'reminder',component:ReminderComponent},
+    {path:'label',component:LabelComponent},
+    {path:'archive',component:ArchiveComponent},
+    {path:'trash',component:TrashComponent}
   ]}
 ];
 

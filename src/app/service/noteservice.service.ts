@@ -49,7 +49,7 @@ export class NoteserviceService {
 
   pinNotes(token:string,id:any):Observable<any>{
 
-    return this.http.post<any>(`${this.noteURl}${environment.pinNoteURL}?id=${id}`,{},{headers: new HttpHeaders().set('token',  localStorage.token) })  .pipe(tap(() => {
+    return this.http.post<any>(`${this.noteURl}${environment.pinNoteURL}?id=${id}`,{},{headers: new HttpHeaders().set('token',  localStorage.token) }) .pipe(tap(() => {
       this._autoRefresh$.next();
     }));
   }
@@ -63,19 +63,21 @@ export class NoteserviceService {
   }
 
   moveToArchiveNote(id: any) {
-    return this.http.post<any>(`${this.noteURl}${environment.archiveNoteURL}/${id}`, {}, { headers: new HttpHeaders().set('token', localStorage.token) });
+    return this.http.post<any>(`${this.noteURl}${environment.archiveNoteURL}/${id}`, {}, { headers: new HttpHeaders().set('token', localStorage.token) }) .pipe(tap(() => {
+      this._autoRefresh$.next();
+    }));
   }
 
-  archieveNote(token:string,id:any):Observable<any>{
-    return this.http.post<any>(this.noteURl + environment.archiveNoteURL + id,{headers: new HttpHeaders().set('token',  token) })
-  }
-
-  unarchieveNote(token:string,id:any):Observable<any>{
-    return this.http.post<any>(this.noteURl + environment.archiveNoteURL + id,{headers: new HttpHeaders().set('token',  token) })
+  getArchivedNotes(token:string) {
+    return this.http.get<any>(this.noteURl + environment.allArchivedNoteURL,{headers: new HttpHeaders().set('token', token)});
   }
 
   emptyBin(token:string,id:any):Observable<any>{
     return this.http.post<any>(this.noteURl + environment.emptyBinURL + id,{headers: new HttpHeaders().set('token',  token) })
+  }
+
+  getBinnedNotes(token:string) {
+    return this.http.get<any>(this.noteURl + environment.allTrashedNoteURL,{headers: new HttpHeaders().set('token', token)});
   }
 
 }

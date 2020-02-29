@@ -30,20 +30,20 @@
   
           <div class="appBarLastIcon">
             <div class="refresh">
-              <div id="refreshbutton" mat-icon-button>
+              <button id="refreshbutton" mat-icon-button>
                 <mat-icon>refresh</mat-icon>
-              </div>
-              <div mat-icon-button>
+              </button>
+              <button mat-icon-button>
                 <mat-icon>reorder</mat-icon>
-              </div>
+              </button>
             </div>
   
   
-            <div mat-icon-button>
+            <button mat-icon-button>
               <mat-icon>
                 account_circle
               </mat-icon>
-            </div>
+            </button>
   
           </div>
         </div>
@@ -66,15 +66,15 @@
   
           <div class="notesdiv">
             
-            <div  class="notes" routerLink="notes">
+            <button style="width: 180px;border-radius: 0 10px 10px 0;" class="notes" (click)="notes()">
               <img src="assets/icon/event_note-24px.svg">
               Notes
-            </div><br>
+            </button><br>
   
-            <div class="remainder">
+            <button class="remainder" style="width: 180px;border-radius: 0 10px 10px 0;" (click)="reminder()">
               <img src="assets/icon/notifications_none-24px.svg">
-              Remainder
-            </div>
+              Reminders
+            </button>
   
           </div>
           
@@ -84,22 +84,22 @@
               LABELS
             </div><br>
   
-            <div class="label">
+            <button class="label" style="width: 180px;border-radius: 0 10px 10px 0;" (click)="label()">
               <img src="assets/icon/edit-24px.svg">
               Edit labels
-            </div>
+            </button>
   
           </div>
   
           <div class="trashmain">
-            <div class="archive">
+            <button class="archive" style="width: 180px;border-radius: 0 10px 10px 0;" (click)="archive()">
                 <img src="assets/icon/archive-24px.svg">
                 Archive
-            </div><br>
-            <div class="trash">
+            </button><br>
+            <button class="trash" style="width: 180px;border-radius: 0 10px 10px 0;" (click)="trash()">
                 <img src="assets/icon/delete-24px.svg">
                 Trash
-            </div>
+            </button>
           </div>
         </div>
       </mat-drawer>

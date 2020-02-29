@@ -86,34 +86,6 @@ export class IconlistComponent implements OnInit {
     });
   }
 
-  archieve(){
-    this.noteservice.archieveNote(this.Token,this.note.id).subscribe((note) =>
-    {
-
-      this.snackbar.open('Note archieved successfully', 'Ok', { duration: 3000 });
-         
-    },
-    (error: any) => {
-      this.snackbar.open(error.error.description, 'error', { duration: 3000 });
-    });
-
-  }
-
-
-  unarchieve(){
-    this.noteservice.unarchieveNote(this.Token,this.note.id).subscribe((note) =>
-    {
-
-      this.snackbar.open('Note unarchieved successfully', 'Ok', { duration: 3000 });
-         
-    },
-    (error: any) => {
-      this.snackbar.open(error.error.description, 'error', { duration: 3000 });
-    });
-
-  }
-
-
   emptybin(){
     this.noteservice.emptyBin(this.Token,this.note.id).subscribe((note) =>
     {

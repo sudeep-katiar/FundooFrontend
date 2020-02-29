@@ -8,26 +8,22 @@
     </button>
 
     <button mat-icon-button>
-        <img src="assets/icon/colorpalate.svg" (click)="onClickColorPlate()" matTooltip="Add Color"/>
+        <img src="../../../assets/icon/colorpalate.svg" (click)="onClickColorPlate()" matTooltip="Add Color"/>
     </button>
 
     <button mat-icon-button>
-        <img src="assets/icon/addImage.svg" matTooltip="Add Image" (click)=addImages()/>
+        <img src="../../../assets/icon/addImage.svg" matTooltip="Add Image" (click)=addImages()/>
     </button>
 
     <button *ngIf="!isArchive" mat-icon-button>
-        <img src="assets/icon/archive-24px.svg" (click)="onClickArchive()" matTooltip="Archive">
+        <img src="../../../assets/icon/archive-24px.svg" (click)="onClickArchive()" matTooltip="Archive">
     </button>
     <button *ngIf="isArchive">
-        <img src="assets/icon/unarchive-24px.svg" (click)="onClickArchive()" matTooltip="UnArchive">
+        <img src="../../../assets/icon/unarchive-24px.svg" (click)="onClickArchive()" matTooltip="UnArchive">
     </button>
-<!-- 
-    <button mat-icon-button>
-        <img src="assets/icon/archive-24px.svg" (click)=archive()/>
-    </button> -->
 
     <button mat-icon-button>
-        <img src="assets/icon/more_vert-24px.svg"/>
+        <img src="../../../assets/icon/more_vert-24px.svg"/>
     </button>
  
 </div>
