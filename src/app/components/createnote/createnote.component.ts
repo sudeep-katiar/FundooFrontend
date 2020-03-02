@@ -11,9 +11,12 @@ import { Note } from 'src/app/model/note.model';
 })
 export class CreatenoteComponent implements OnInit {
   popup:boolean=false;
-  constructor(private router:Router,private noteservice: NoteserviceService, private snackbar:MatSnackBar ) { }
   note:Note = new Note();
-  Token=localStorage.getItem('token')
+  noteId:Note[];
+  Token=localStorage.getItem('token');
+  isPinned:boolean;
+
+  constructor(private router:Router,private noteservice: NoteserviceService, private snackbar:MatSnackBar ) { }
   
   ngOnInit() {
   }
@@ -35,6 +38,15 @@ export class CreatenoteComponent implements OnInit {
     this.popup=true;
   }
 
-  
+pinned(key, note) {
+  note.pinned = key === 'pinned' ? 1 : 0;
+  this.noteservice.pinNotes(this.Token,this.noteId).subscribe(response => {
+
+    console.log(response);
+  },
+    error => {
+      console.log("error");
+    })
+}
 
 }
