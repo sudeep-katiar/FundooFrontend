@@ -11,12 +11,12 @@
         <div class="pinNotes">
             <input style="border: none; height: 40px; width: 392px;" matInput type="text" class="input" placeholder="Title" [(ngModel)]="note.title"/>
 
-            <button *ngIf="note.is_pinned " mat-icon-button matTooltip="unpin" (click)="pinned('unpinned',note)"
+            <button *ngIf="note.pinned " mat-icon-button matTooltip="unpin" (click)="pinned('unpinned',note)"
                 class="button">
                 <img class="image" style="border: none; width: 93%;" src="/assets/icon/pinned.svg" height="50%"
                     id="imgRem">
             </button>
-            <button *ngIf="!note.is_pinned" mat-icon-button matTooltip="pin" (click)="pinned('pinned',note)"
+            <button *ngIf="!note.pinned" mat-icon-button matTooltip="pin" (click)="pinned('pinned',note)"
                 class="button">
                 <img class="image" style="border: none; width: 93%; " src="/assets/icon/unpin.svg" height="50%"
                     id="imgRem">
