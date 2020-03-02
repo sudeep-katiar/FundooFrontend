@@ -23,7 +23,14 @@
     </button>
 
     <button mat-icon-button>
-        <img src="../../../assets/icon/more_vert-24px.svg"/>
+        <img  mat-button [matMenuTriggerFor]="menu" style="height: 1.5em; width: 2em;" src="../../../assets/icon/more_vert-24px.svg" (click)="onclicksetNoteid(note.id)"
+        matTooltip="More"/>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item (click)="onClickDelete()">Delete Note</button>
+            <!-- <button mat-menu-item>Add Label</button> -->
+            <button mat-menu-item [matMenuTriggerFor]="vertebrates">Add Label</button>
+            <button mat-menu-item>Add Drawing</button>
+        </mat-menu>
     </button>
  
 </div>
