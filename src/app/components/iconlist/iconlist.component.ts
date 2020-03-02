@@ -3,6 +3,8 @@ import { Note } from 'src/app/model/note.model';
 import { Router } from '@angular/router';
 import { NoteserviceService } from 'src/app/service/noteservice.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatDialog } from '@angular/material/dialog';
+import { CollaboratorComponent } from '../collaborator/collaborator.component';
 
 @Component({
   selector: 'app-iconlist',
@@ -14,8 +16,11 @@ export class IconlistComponent implements OnInit {
    notes:Note = new Note();
    @Input() note:Note;
   error: any;
+  notesicon: any;
+  noteId: number;
+  labelService: any;
 
-  constructor(private router:Router, private noteservice:NoteserviceService, private snackbar:MatSnackBar) { }
+  constructor(private router:Router,private dialog: MatDialog, private noteservice:NoteserviceService, private snackbar:MatSnackBar) { }
 
   Token=localStorage.getItem('token')
 
@@ -98,23 +103,35 @@ export class IconlistComponent implements OnInit {
     });
 
   }
-
-  remainder(){
-
-  }
-
-  collabrator(){
-
-  }
-
-  addImages(){
-
-  }
-
-  changeColor(){
-
-  }
-
   
+  collabrator(): void {
+      console.log("Note id in colab111111--->", this.note.id);
+  
+  
+      const dialogRef = this.dialog.open(CollaboratorComponent, {
+        width: '490px',
+        height: '290px',
+        data: { noteId: this.note.id }
+      });
+
+  }
+
+  onClickDelete() {
+    this.noteId=this.note.id;
+    this.noteservice.trashNote(this.note.id).subscribe((response) => {
+      this.snackbar.open("Note unpinned and trashed", 'ok', { duration: 5000 });
+    },
+      error => {
+        this.snackbar.open("error in Note Deletion", 'ok', { duration: 5000 });
+
+      }
+
+    );
+  }
+
+  onclicksetNoteid(noteId:any){
+    console.log(noteId);
+      // this.labelService.setlabelList(noteId);
+  }
 
 }
