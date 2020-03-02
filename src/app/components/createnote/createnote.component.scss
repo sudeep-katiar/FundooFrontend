@@ -34,3 +34,14 @@
 .pinNotes {
     display: inline-flex;
 }
+#pin{
+    height: 30px;
+    width:30px;
+    font-weight: bolder;
+}
+#pindiv{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding-right: 2em;
+}
