@@ -1,7 +1,7 @@
 <div style="padding-left: 100px;font-family: fantasy;color: darkgray;">Pinnotes</div>
 <div style="flex-wrap: wrap;">
     <div class="getAllNotes" fxLayout="{{view}}" fxFlexOffset="15" style="flex-direction: row; box-sizing: border-box; display: flex; margin-left: 15%; margin-right:7%;">
-        <mat-card class="getNotesMat" [ngStyle]="{'background':note.note_color}"
+        <mat-card class="getNotesMat" [ngStyle]="{'background':note.noteColor}"
             [ngClass]="{'qwerty':flag,'qwerty2':!flag}"  *ngFor="let note of pinnotes" >
             <div>
                 <div class="pinNotes">
@@ -24,7 +24,7 @@
 <div style="padding-left: 100px;font-family: fantasy;color: darkgray;">Others</div>
 <div style="flex-wrap: wrap;">
     <div class="getAllNotes" fxLayout="{{view}}" fxFlexOffset="15" style="flex-direction: row; box-sizing: border-box; display: flex; margin-left: 15%; margin-right:7%;">
-        <mat-card class="getNotesMat" [ngStyle]="{'background':note.note_color}"
+        <mat-card class="getNotesMat" [ngStyle]="{'background':note.noteColor}"
             [ngClass]="{'qwerty':flag,'qwerty2':!flag}"  *ngFor="let note of unpinnotes" >
             <div>
                 <div class="pinNotes">
