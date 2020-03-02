@@ -3,10 +3,11 @@ export class Note {
     id:number;
     title:string;
     content:string;
-    is_deleted:boolean;
-    is_pinned:boolean;
-    is_archived:boolean;
-    note_color:string;
+    deleted:boolean;
+    pinned:boolean;
+    archived:boolean;
+    noteColor:string;
     reminder:string;
-    user_id:number;
+    createdBy:number;
+    reminderStatus:boolean;
 }

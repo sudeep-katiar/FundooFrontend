@@ -26,14 +26,14 @@ export class PinNotesComponent implements OnInit {
   pinnedNote() {
     console.log(this.note.id);
     this.noteService.pinNotes(localStorage.token,this.note.id).subscribe(response => {
-      if (this.isPinned) {
-        this.isPinned = true;
-        this.matSnackBar.open("Note Pinned Successfully", 'Ok', { duration: 3000 });
+      if (this.note.pinned) {
+        this.isPinned = false;
+        this.matSnackBar.open("Note unPinned Successfully", 'Ok', { duration: 3000 });
         // this.dialogRef.close();
       }
-      else if (!this.isPinned) {
-        this.isPinned = false;
-        this.matSnackBar.open("Note unPinned Successfully", 'Ok', { duration:3000 });
+      else if (!this.note.pinned) {
+        this.isPinned = true;
+        this.matSnackBar.open("Note Pinned Successfully", 'Ok', { duration:3000 });
         // this.dialogRef.close();
       }
       console.log(response);
@@ -43,4 +43,5 @@ export class PinNotesComponent implements OnInit {
         console.log("error");
       });
   }
+  
 }
