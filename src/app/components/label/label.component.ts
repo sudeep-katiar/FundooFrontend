@@ -5,7 +5,7 @@ import { LabelserviceService } from 'src/app/service/labelservice.service';
 @Component({
   selector: 'app-label',
   templateUrl: './label.component.html',
-  styleUrls: ['./label.component.css']
+  styleUrls: ['./label.component.scss']
 })
 export class LabelComponent implements OnInit {
   labels:Label[];
@@ -14,6 +14,7 @@ export class LabelComponent implements OnInit {
   constructor(private labelService:LabelserviceService) { }
 
   ngOnInit() {
+    // this.getAllUserLabel();
   }
 
   // getNoteId(){
@@ -24,8 +25,8 @@ export class LabelComponent implements OnInit {
   //   });
   // }
   // getAllUserLabel(){
-  //   this.labelService.getAllLabels().subscribe((data)=>{
-  //     this.labels=data.list;
+  //   this.labelService.getAllLabels().subscribe((response)=>{
+  //     this.labels=response.data;
   //     console.log(this.labels);
   //   });
   // }
