@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { MatTooltipModule } from '@angular/material';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -64,6 +65,7 @@ import { CollaboratorComponent } from './components/collaborator/collaborator.co
     ReactiveFormsModule,
     FormsModule,
     MatToolbarModule,
+    MatTooltipModule,
     MatIconModule,
     MatMenuModule,
     MatSidenavModule,
