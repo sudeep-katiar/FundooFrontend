@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { Subject } from 'rxjs';
-import { HttpHeaders } from '@angular/common/http';
+import { HttpHeaders, HttpClient } from '@angular/common/http';
+import { HttpserviceService } from './httpservice.service';
 
 @Injectable({
   providedIn: 'root'
@@ -17,6 +18,22 @@ export class LabelserviceService {
   get autoRefresh$() {
     return this._autoRefresh$;
   }
+
+  private labelsList = new Subject<any>();
   
-  constructor() { }
+  constructor(private http:HttpClient) { }
+
+  setlabelList(message:any){
+
+    this.labelsList.next({labels:message});
+}
+
+getNoteLabels(noteId:any){
+  return this.http.get(`${environment.labelApiUrl}/${environment.getLabels}?noteId=${noteId}`,{headers: new HttpHeaders().set('token',  localStorage.token) });
+}
+
+getAllLabels(){
+  return this.http.get(`${environment.labelApiUrl}/${environment.getLabelsList}`, { headers: new HttpHeaders().set('token', sessionStorage.token)});
+}
+
 }
