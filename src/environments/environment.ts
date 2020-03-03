@@ -27,7 +27,10 @@ export const environment = {
   allUnpinnedNoteURL:'notes/allunpinnednotes',
   allTrashedNoteURL:'notes/alltrashednotes',
   allArchivedNoteURL:'notes/getallarchived',
-  allUnarchivedURL:'notes/getallunarchived'
+  allUnarchivedURL:'notes/getallunarchived',
+
+  getLabels:'label/maptonote',
+  getLabelsList:'label/alllabel'
 };
 
 /*
