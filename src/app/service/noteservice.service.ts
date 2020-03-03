@@ -39,8 +39,10 @@ export class NoteserviceService {
     }));
   }
 
-  deleteNote(token:string,id:any):Observable<any>{
-    return this.http.post<any>(this.noteURl + environment.deleteNoteURL + id,{headers: new HttpHeaders().set('token',  token) })
+  deleteNote(id:any):Observable<any>{
+    return this.http.post<any>(`${this.noteURl}${environment.deleteNoteURL}${id}`,{},{headers: new HttpHeaders().set('token',  localStorage.token) }) .pipe(tap(() => {
+      this._autoRefresh$.next();
+    }));
   }
 
   restoreNote(token:string,id:any):Observable<any>{
@@ -78,6 +80,13 @@ export class NoteserviceService {
 
   getBinnedNotes(token:string) {
     return this.http.get<any>(this.noteURl + environment.allTrashedNoteURL,{headers: new HttpHeaders().set('token', token)});
+  }
+
+  addColor(id,color){
+    console.log(`${environment.notesApiUrl}${environment.colorNoteURL}${id}?color=${color}`);
+    return this.http.post<any>(`${environment.notesApiUrl}${environment.colorNoteURL}${id}?color=${color}`,{}, { headers: new HttpHeaders().set('token', localStorage.token) }).pipe(tap(() => {
+      this._autoRefresh$.next();
+    }));
   }
 
 }
