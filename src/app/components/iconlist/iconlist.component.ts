@@ -32,7 +32,7 @@ export class IconlistComponent implements OnInit {
   }
 
   delete(){
-    this.noteservice.deleteNote(this.Token,this.note.id).subscribe((note) =>
+    this.noteservice.deleteNote(this.note.id).subscribe((note) =>
     {
       this.snackbar.open('Note deleted successfully', 'Ok', { duration: 3000 });
          
@@ -84,7 +84,7 @@ export class IconlistComponent implements OnInit {
   onClickArchive() {
     console.log("id: "+this.note.id);
     this.noteservice.moveToArchiveNote(this.note.id).subscribe((response) => {
-      this.snackbar.open("Note unpinned and Archived", "OK", { duration: 3000 });
+      this.snackbar.open("Note Archived", "OK", { duration: 3000 });
     },
     (error: any) => {
         this.snackbar.open("rror.error.description", "OK", { duration: 3000 });
@@ -118,8 +118,8 @@ export class IconlistComponent implements OnInit {
 
   onClickDelete() {
     this.noteId=this.note.id;
-    this.noteservice.trashNote(this.note.id).subscribe((response) => {
-      this.snackbar.open("Note unpinned and trashed", 'ok', { duration: 5000 });
+    this.noteservice.deleteNote(this.note.id).subscribe((response) => {
+      this.snackbar.open("Note trashed", 'ok', { duration: 5000 });
     },
       error => {
         this.snackbar.open("error in Note Deletion", 'ok', { duration: 5000 });
@@ -130,8 +130,36 @@ export class IconlistComponent implements OnInit {
   }
 
   onclicksetNoteid(noteId:any){
-    console.log(noteId);
+    console.log("note id "+noteId);
       // this.labelService.setlabelList(noteId);
   }
 
+  setColor( color) {
+    console.log("Color---->", color,this.note.id);
+    
+    this.noteservice.addColor(this.note.id,color).subscribe(res => {
+
+      console.log("Resssponse backk---->");
+
+      console.log("Response after setting note color-------->", res);
+    })
+  }
+
+  arrayOfColors = [
+    [
+      { color: "rgb(255, 179, 255)", name: "pink" },
+      { color: "rgb(255, 255, 128)", name: "darkGolden" },
+      { color: "white", name: "white" }
+    ],
+    [
+      { color: "slategray", name: "grey" },
+      { color: "rgb(153, 221, 255)", name: "light blue" },
+      { color: "rgb(200, 232, 104)", name: "yellow" }
+    ],
+    [
+      { color: "rgb(255, 153, 0)", name: "orange" },
+      { color: "rgb(97, 191, 82)", name: "green" },
+      { color: " rgb(158, 136, 191)", name: "darkYellow" }
+    ]
+  ]
 }

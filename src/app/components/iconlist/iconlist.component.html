@@ -8,12 +8,25 @@
     </button>
 
     <button mat-icon-button>
-        <img src="../../../assets/icon/colorpalate.svg" (click)="onClickColorPlate()" matTooltip="Add Color"/>
+        <img src="../../../assets/icon/colorpalate.svg" [matMenuTriggerFor]="colorlist" matTooltip="Add Color"/>
     </button>
 
     <button mat-icon-button>
         <img src="../../../assets/icon/addImage.svg" matTooltip="Add Image" (click)=addImages()/>
     </button>
+    <mat-menu #colorlist="matMenu" [overlapTrigger]="false">
+        <ng-template matMenuContent>
+            <div>
+                <div fxLayout="row" fxLayoutGap="10px" style="margin-top: 1px" *ngFor="let colors of arrayOfColors">
+                    <div *ngFor="let color of colors">
+                        <button [ngStyle]="{ 'background-color': color.color }" (click)="setColor((color.color))"
+                            matTooltip="{{ color.name }}" mat-mini-fab></button>
+    
+                    </div>
+                </div>
+            </div>
+        </ng-template>
+    </mat-menu>
 
     <button *ngIf="!isArchive" mat-icon-button>
         <img src="../../../assets/icon/archive-24px.svg" (click)="onClickArchive()" matTooltip="Archive">
@@ -28,7 +41,7 @@
         <mat-menu #menu="matMenu">
             <button mat-menu-item (click)="onClickDelete()">Delete Note</button>
             <!-- <button mat-menu-item>Add Label</button> -->
-            <button mat-menu-item [matMenuTriggerFor]="vertebrates">Add Label</button>
+            <button mat-menu-item >Add Label</button>
             <button mat-menu-item>Add Drawing</button>
         </mat-menu>
     </button>
