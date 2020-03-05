@@ -74,6 +74,10 @@ export class NoteserviceService {
     return this.http.get<any>(this.noteURl + environment.allArchivedNoteURL,{headers: new HttpHeaders().set('token', token)});
   }
 
+  getReminderNotes(token:string) {
+    return this.http.get<any>(this.noteURl + environment.allReminderNoteURL,{headers: new HttpHeaders().set('token', token)});
+  }
+
   emptyBin(token:string,id:any):Observable<any>{
     return this.http.post<any>(this.noteURl + environment.emptyBinURL + id,{headers: new HttpHeaders().set('token',  token) })
   }
