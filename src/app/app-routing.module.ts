@@ -12,6 +12,7 @@ import { ArchiveComponent } from './components/archive/archive.component';
 import { LabelComponent } from './components/label/label.component';
 import { ReminderComponent } from './components/reminder/reminder.component';
 import { TrashComponent } from './components/trash/trash.component';
+import { DeletenoteComponent } from './components/deletenote/deletenote.component';
 
 
 
@@ -32,7 +33,7 @@ const routes: Routes = [
     {path:'reminder',component:ReminderComponent},
     {path:'label',component:LabelComponent},
     {path:'archive',component:ArchiveComponent},
-    {path:'trash',component:TrashComponent}
+    {path:'trash',component:DeletenoteComponent}
   ]}
 ];
 
