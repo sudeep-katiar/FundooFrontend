@@ -67,11 +67,13 @@
   }
 
   .notesdiv{
+      display: grid;
       padding: 10px;
       border-bottom: thick double #bfc1c2;
   }
 
 .lebelmain{
+    display: grid;
     padding: 10px;
     border-bottom: thick double #bfc1c2;
 }
@@ -84,6 +86,7 @@
 }
 
 .trashmain{
+    display: grid;
     padding:10px;
     border-bottom: thick double #bfc1c2;
 }
@@ -91,14 +94,14 @@
 .notes:hover{
     display: flex;
     align-items: center;
-    border: 1px solid grey;background-color: lightgrey;
+    border: 1px solid grey;background-color: lightsalmon;
     padding-bottom: inherit;
     border-radius: 0 10px 10px 0;
 }
 .remainder:hover{
     display: flex;
     align-items: center;
-    border: 1px solid grey;background-color: lightgrey;
+    border: 1px solid grey;background-color: lightsalmon;
     padding-bottom: inherit;
     border-radius: 0 10px 10px 0;
 }
@@ -106,14 +109,14 @@
 .label:hover{
     display: flex;
     align-items: center;
-    border: 1px solid grey;background-color: lightgrey;
+    border: 1px solid grey;background-color: lightsalmon;
     padding-bottom: inherit;
     border-radius: 0 10px 10px 0;
 }
 
 .archive:hover{
     display: flex;
-    align-items: center;background-color: lightgrey;
+    align-items: center;background-color: lightsalmon;
     border: 1px solid grey;
     padding-bottom: inherit;
     border-radius: 0 10px 10px 0;
@@ -122,7 +125,7 @@
 .trash:hover{
     display: flex;
     align-items: center;
-    border: 1px solid grey;background-color: lightgrey;
+    border: 1px solid grey;background-color: lightsalmon;
     padding-bottom: inherit;
     border-radius: 0 10px 10px 0;
 }
