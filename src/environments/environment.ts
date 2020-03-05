@@ -22,6 +22,7 @@ export const environment = {
   archiveNoteURL:'notes/archive',
   colorNoteURL:'notes/addcolor/',
   reminderNoteURL:'notes/reminder/',
+  allReminderNoteURL:'notes/getallreminder',
   emptyBinURL:'notes/emptybin/',
   allPinnedNoteURL:'notes/allpinnednotes',
   allUnpinnedNoteURL:'notes/allunpinnednotes',
