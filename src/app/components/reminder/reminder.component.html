@@ -1,1 +1,22 @@
-<p>reminder works!</p>
+<div style="padding-left: 100px;font-family: fantasy;color: darkgray;">Reminder</div>
+<div style="flex-wrap: wrap;">
+    <div class="getAllNotes" fxLayout="{{view}}" fxFlexOffset="15" style="flex-direction: row; box-sizing: border-box; display: flex; margin-left: 15%; margin-right:7%;">
+        <mat-card class="getNotesMat" [ngStyle]="{'background':note.noteColor}"
+            [ngClass]="{'qwerty':flag,'qwerty2':!flag}"  *ngFor="let note of remindernotes" >
+            <div>
+                <div class="pinNotes" style="display: flex;justify-content: flex-end;">
+                    <app-pin-notes [note]="note" (click)="onClickNoteId(note.id)"></app-pin-notes>
+                </div>
+                <div class="title" (click)="openDialog(note)" >
+                    {{note.title}}
+                </div>
+                <div class="title" (click)="openDialog(note)" >
+                    {{note.content}}
+                </div>
+            </div>
+            <div>
+                <app-iconlist [note]="note"></app-iconlist>
+            </div>
+        </mat-card>
+    </div>
+</div>
