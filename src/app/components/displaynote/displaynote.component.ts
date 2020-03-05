@@ -47,8 +47,7 @@ export class DisplaynoteComponent implements OnInit {
         console.log("Unpin Notes"+data.data);
         this.unpinnotes = data.data;
       }
-    )
-    ;
+    );
   }
   
   closeClick(newNote: any) {
