@@ -7,6 +7,7 @@ export const environment = {
   apiUrl:'http://localhost:8080/users/',
   notesApiUrl:'http://localhost:8080/',
   labelApiUrl:'http://localhost:8080/',
+  collaboratorApiUrl:'http://localhost:8080/collaborator',
 
   registerURL:'register/',
   loginURL:'login/',
@@ -31,7 +32,9 @@ export const environment = {
   allUnarchivedURL:'notes/getallunarchived',
 
   getLabels:'label/maptonote',
-  getLabelsList:'label/alllabel'
+  getLabelsList:'label/alllabel',
+
+  addCollaboratorURL:'/addCollaborator'
 };
 
 /*
