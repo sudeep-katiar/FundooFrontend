@@ -33,7 +33,7 @@ getNoteLabels(noteId:any){
 }
 
 getAllLabels(){
-  return this.http.get(`${environment.labelApiUrl}/${environment.getLabelsList}`, { headers: new HttpHeaders().set('token', sessionStorage.token)});
+  return this.http.get(`${environment.labelApiUrl}${environment.getLabelsList}`, { headers: new HttpHeaders().set('token', localStorage.token)});
 }
 
 }
