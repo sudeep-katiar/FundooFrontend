@@ -32,10 +32,10 @@ export class CollaboratorComponent implements OnInit {
   writeEmail() {
     let addColl = {
       "noteId": this.onenote.noteId,
-      "collaboratorId": this.email1.value
+      "email ": this.email1.value
     }
     console.log("Add coll-->", addColl);
-    this.noteService.addCollaborator(addColl).subscribe((res: any) => {
+    this.noteService.addCollaborator(this.onenote.noteId).subscribe((res: any) => {
       console.log("Getting all collab users--->", res);
 
     })
