@@ -93,11 +93,16 @@ export class NoteserviceService {
     }));
   }
 
-  addCollaborator(id) {
-    return this.http.post<any>(`${environment.collaboratorApiUrl}${environment.addCollaboratorURL}/${id}`, {}, { headers: new HttpHeaders().set('token', localStorage.token) }).pipe(tap(() => {
+  addCollaborator(id,email) {
+    return this.http.post<any>(`${environment.collaboratorApiUrl}${environment.addCollaboratorURL}?email=${email}&noteId=${id}`, {}, { headers: new HttpHeaders().set('token', localStorage.token) }).pipe(tap(() => {
       this._autoRefresh$.next();
     }));
-
   }
+
+  addReminder(id:any,note:any,time:any){
+    return this.httpservice.put(`${environment.notesApiUrl}${environment.reminderNoteURL}${id}?time=${time}`,note,{headers:new HttpHeaders().set('token',localStorage.token)}).pipe(tap(() => {
+      this._autoRefresh$.next();
+    }));
+}
 
 }
