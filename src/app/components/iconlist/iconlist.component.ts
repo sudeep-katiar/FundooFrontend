@@ -106,10 +106,8 @@ export class IconlistComponent implements OnInit {
   
   collabrator(): void {
       console.log("Note id in colab111111--->", this.note.id);
-  
-  
       const dialogRef = this.dialog.open(CollaboratorComponent, {
-        width: '490px',
+        width: 'auto',
         height: '290px',
         data: { noteId: this.note.id }
       });
