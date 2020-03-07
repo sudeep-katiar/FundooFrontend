@@ -32,6 +32,7 @@ import { LabelComponent } from './components/label/label.component';
 import { ReminderComponent } from './components/reminder/reminder.component';
 import { TrashComponent } from './components/trash/trash.component';
 import { CollaboratorComponent } from './components/collaborator/collaborator.component';
+import { AmazingTimePickerModule } from 'amazing-time-picker'; 
 
 @NgModule({
   declarations: [
@@ -71,7 +72,8 @@ import { CollaboratorComponent } from './components/collaborator/collaborator.co
     MatSidenavModule,
     MatSelectModule,
     FlexLayoutModule,
-    MatDialogModule
+    MatDialogModule,
+    AmazingTimePickerModule
   ],
   entryComponents: [ CollaboratorComponent],
   providers: [ { provide: MatDialogTitle, useValue: {} }, { provide: MatDialogRef, useValue: {} }, { provide: MAT_DIALOG_DATA, useValue: [] } ],  bootstrap: [AppComponent]
