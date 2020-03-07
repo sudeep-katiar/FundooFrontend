@@ -73,6 +73,7 @@ import { CollaboratorComponent } from './components/collaborator/collaborator.co
     FlexLayoutModule,
     MatDialogModule
   ],
+  entryComponents: [ CollaboratorComponent],
   providers: [ { provide: MatDialogTitle, useValue: {} }, { provide: MatDialogRef, useValue: {} }, { provide: MAT_DIALOG_DATA, useValue: [] } ],  bootstrap: [AppComponent]
 })
 export class AppModule { }
