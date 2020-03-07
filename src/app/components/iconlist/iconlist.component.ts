@@ -5,6 +5,7 @@ import { NoteserviceService } from 'src/app/service/noteservice.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material/dialog';
 import { CollaboratorComponent } from '../collaborator/collaborator.component';
+import { AmazingTimePickerService } from 'amazing-time-picker';
 
 @Component({
   selector: 'app-iconlist',
@@ -19,8 +20,13 @@ export class IconlistComponent implements OnInit {
   notesicon: any;
   noteId: number;
   labelService: any;
+  selectedTime: '18:33';
+  isoo: any;
+  today: string;
+  noteService: any;
+  snackBar: any;
 
-  constructor(private router:Router,private dialog: MatDialog, private noteservice:NoteserviceService, private snackbar:MatSnackBar) { }
+  constructor(private router:Router,private dialog: MatDialog, private noteservice:NoteserviceService, private snackbar:MatSnackBar,private atp: AmazingTimePickerService) { }
 
   Token=localStorage.getItem('token')
 
@@ -29,6 +35,45 @@ export class IconlistComponent implements OnInit {
 
   getNoteId(items:any){
     this.notes.id=items.id;
+  }
+
+  open(noteID) {
+    console.log("NoteID to set alram-----",noteID);
+    const amazingTimePicker = this.atp.open({
+      time: this.selectedTime,
+      theme: 'dark',
+      arrowStyle: {
+        background: 'red',
+        color: 'white'
+      }
+    });
+    amazingTimePicker.afterClose().subscribe(time => {
+      var str = this.selectedTime;
+      let time1 = str.replace(":", ",")
+      let today = new Date();
+      let dd = String(today.getDate()).padStart(2, '0');
+      let mm = String(today.getMonth()).padStart(2, '0');
+      let yyyy = today.getFullYear();
+
+      this.today = yyyy + ',' + mm + ',' + dd;
+      let con = this.today.concat(',', time1, ',', '0');
+
+      let timee = con.split(",");
+      let op = new Date(parseInt(timee[0]), parseInt(timee[1]), parseInt(timee[2]), parseInt(timee[3]), parseInt(timee[4]), parseInt(timee[5]))
+      let iso = op.toLocaleString();
+      console.log("ISOOO Date--",iso);
+   
+      let dateTime={
+        "id":noteID,
+        "reminder":iso,
+      }
+      console.log("Date time to set reminder--->",dateTime);
+
+      this.noteService.addReminder(dateTime,iso).subscribe(res => {
+        console.log("Response after setting for date time ----------->", res);
+        this.snackBar.open("reminder Added","OK",{duration:3000});
+      })  
+    });
   }
 
   delete(){
