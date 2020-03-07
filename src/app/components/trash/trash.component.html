@@ -1,1 +1,9 @@
-<p>trash works!</p>
+<div class="main" fxLayout="row" fxLayoutAlign="space-between center">
+    <button mat-icon-button>
+        <img src="../../../assets/icon/delete_forever-24px.svg" matTooltip="Delete Forever" (click)="delete()"/>
+    </button>
+
+    <button mat-icon-button>
+        <img src="../../../assets/icon/restore_from_trash-24px.svg" matTooltip="Restore From Trash" (click)=restore()/>
+    </button>
+</div>
