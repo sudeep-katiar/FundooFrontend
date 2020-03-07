@@ -54,11 +54,8 @@
   
   <!-- side navigation bar -->
   
-  <!-- <div>
-    <router-outlet></router-outlet>
-  </div> -->
   
-   <div class="sidenavdiv">
+   <div class="sidenavdiv" style="background-color: whitesmoke;">
     <mat-drawer-container class="example-container" autosize>
       <mat-drawer #drawer class="example-sidenav" mode="side">
         <div class="maindiv">
@@ -66,12 +63,12 @@
   
           <div class="notesdiv">
             
-            <button style="width: 180px;border-radius: 0 10px 10px 0;background-color: aliceblue;outline: none;" class="notes" (click)="notes()">
+            <button style="width: 180px;border-radius: 10px 10px 10px 10px;background-color: aliceblue;outline: none;" class="notes" (click)="notes()">
               <img src="assets/icon/event_note-24px.svg">
               Notes
             </button><br>
   
-            <button class="remainder" style="width: 180px;border-radius: 0 10px 10px 0;background-color: aliceblue;outline: none;" (click)="reminder()">
+            <button class="remainder" style="width: 180px;border-radius: 10px 10px 10px 10px;background-color: aliceblue;outline: none;" (click)="reminder()">
               <img src="assets/icon/notifications_none-24px.svg">
               Reminders
             </button>
@@ -80,11 +77,12 @@
           
           <div class="lebelmain">
   
-            <div class="labelmain">
-              LABELS
+            <div class="labelmain">LABELS</div><br>
+            <div *ngFor="let label of labels" class="labelbutton">
+              <span class="labels1"> <img src="../../../assets/icon/label-24px.svg"> {{label.labelTitle}} <br> </span>
             </div><br>
   
-            <button class="label" style="width: 180px;border-radius: 0 10px 10px 0;background-color: aliceblue;outline: none;" (click)="label()">
+            <button class="label" style="width: 180px;border-radius: 10px 10px 10px 10px;background-color: aliceblue;outline: none;" (click)="label()">
               <img src="assets/icon/edit-24px.svg">
               Edit labels
             </button>
@@ -92,11 +90,11 @@
           </div>
   
           <div class="trashmain">
-            <button class="archive" style="width: 180px;border-radius: 0 10px 10px 0;background-color: aliceblue;outline: none;" (click)="archive()">
+            <button class="archive" style="width: 180px;border-radius: 10px 10px 10px 10px;background-color: aliceblue;outline: none;" (click)="archive()">
                 <img src="assets/icon/archive-24px.svg">
                 Archive
             </button><br>
-            <button class="trash" style="width: 180px;border-radius: 0 10px 10px 0;background-color: aliceblue;outline: none;" (click)="trash()">
+            <button class="trash" style="width: 180px;border-radius: 10px 10px 10px 10px;background-color: aliceblue;outline: none;" (click)="trash()">
                 <img src="assets/icon/delete-24px.svg">
                 Trash
             </button>
