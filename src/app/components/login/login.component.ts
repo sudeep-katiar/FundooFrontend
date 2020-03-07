@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
     let resp
      this.userservice.login(this.loginForm.value).subscribe( response => {
 
-      console.log(response.message);
+      console.log("token......"+response.message);
        localStorage.setItem("token",response.message);
        this.router.navigateByUrl("dashboard")
        resp =response;
