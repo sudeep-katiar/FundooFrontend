@@ -79,6 +79,18 @@
     border-bottom: thick double #bfc1c2;
 }
 
+.labelbutton {
+    display: flex;
+    justify-content: center;
+    border: none;
+}
+
+.labels1{
+    display: flex;
+    justify-content: center;
+    color: lightslategrey;
+}
+
 .labelmain{
     color: grey;
     font: small-caps;
