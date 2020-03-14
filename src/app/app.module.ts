@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { MatTooltipModule } from '@angular/material';
+import { MatTooltipModule, MatCheckbox, MatCheckboxModule } from '@angular/material';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -72,6 +72,7 @@ import { AmazingTimePickerModule } from 'amazing-time-picker';
     MatSidenavModule,
     MatSelectModule,
     FlexLayoutModule,
+    MatCheckboxModule,
     MatDialogModule,
     AmazingTimePickerModule
   ],
