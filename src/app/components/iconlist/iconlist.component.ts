@@ -6,6 +6,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material/dialog';
 import { CollaboratorComponent } from '../collaborator/collaborator.component';
 import { AmazingTimePickerService } from 'amazing-time-picker';
+import { LabelComponent } from '../label/label.component';
 
 @Component({
   selector: 'app-iconlist',
@@ -25,6 +26,7 @@ export class IconlistComponent implements OnInit {
   today: string;
   noteService: any;
   snackBar: any;
+  name: any;
 
   constructor(private router:Router,private dialog: MatDialog, private noteservice:NoteserviceService, private snackbar:MatSnackBar,private atp: AmazingTimePickerService) { }
 
@@ -205,4 +207,18 @@ export class IconlistComponent implements OnInit {
       { color: " rgb(158, 136, 191)", name: "darkYellow" }
     ]
   ]
+
+  public dailogLabel(name:string) {
+    const data = this.note;
+    console.log("note value",this.note);
+    const dialogRef = this.dialog.open(LabelComponent, {
+      width: '500px',
+      data: { 'data' : data }
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      this.name = result;
+    });
+  }
+
 }
