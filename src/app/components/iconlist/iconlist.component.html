@@ -40,8 +40,9 @@
         matTooltip="More"/>
         <mat-menu #menu="matMenu">
             <button mat-menu-item (click)="onClickDelete()">Delete Note</button>
-            <!-- <button mat-menu-item>Add Label</button> -->
-            <button mat-menu-item >Add Label</button>
+            <button mat-menu-item (click)="dailogLabel(label)">
+                Create Label
+            </button>
             <button mat-menu-item>Add Drawing</button>
         </mat-menu>
     </button>
