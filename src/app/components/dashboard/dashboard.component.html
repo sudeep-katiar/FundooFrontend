@@ -29,7 +29,7 @@
           </div>
   
           <div class="appBarLastIcon">
-            <div class="refresh">
+            <div class="refresh" (click)="refresh()">
               <button id="refreshbutton" mat-icon-button>
                 <mat-icon>refresh</mat-icon>
               </button>
@@ -55,7 +55,7 @@
   <!-- side navigation bar -->
   
   
-   <div class="sidenavdiv" style="background-color: whitesmoke;">
+   <div class="sidenavdiv" style="background-color: whitesmoke; width: auto;">
     <mat-drawer-container class="example-container" autosize>
       <mat-drawer #drawer class="example-sidenav" mode="side">
         <div class="maindiv">
@@ -82,7 +82,7 @@
               <span class="labels1"> <img src="../../../assets/icon/label-24px.svg"> {{label.labelTitle}} <br> </span>
             </div><br>
   
-            <button class="label" style="width: 180px;border-radius: 10px 10px 10px 10px;background-color: aliceblue;outline: none;" (click)="label()">
+            <button class="label" style="width: 180px;border-radius: 10px 10px 10px 10px;background-color: aliceblue;outline: none;" (click)="dailogLabel(label)">
               <img src="assets/icon/edit-24px.svg">
               Edit labels
             </button>
