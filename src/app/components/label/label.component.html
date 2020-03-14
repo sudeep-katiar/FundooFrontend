@@ -1,4 +1,12 @@
-<!-- <div *ngFor="let label of labels">
-    <mat-checkbox></mat-checkbox>
-    <label mat-menu-item style="display:inline">{{label.labelName}}</label>
-</div> -->
+<div>
+    <mat-card class="getLabel">
+      <mat-card-content>
+        <h3 mat-subheader>Label Note</h3>
+        <input matInput #name (keyup.enter)="createLabel(name.value)" (blur)="createLabel(name.value); name.value=''">
+        <button mat-button (click)="createLabel(name.value)" class="example-margin">Create</button>
+        <div class="check">
+          <mat-checkbox class="example-margin" *ngFor="let label of labels">{{label.labelTitle}}</mat-checkbox>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
