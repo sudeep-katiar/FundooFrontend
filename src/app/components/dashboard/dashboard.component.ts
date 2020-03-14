@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { LabelserviceService } from 'src/app/service/labelservice.service';
 import { Label } from 'src/app/model/label.model';
+import { LabelComponent } from '../label/label.component';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,10 +11,17 @@ import { Label } from 'src/app/model/label.model';
 })
 export class DashboardComponent implements OnInit {
   labels:Label[];
+  dialogref: any;
+  dialog: any;
   constructor(private router:Router,private labelService:LabelserviceService) { }
 
   ngOnInit() {
     this.getAllLabelList();
+  }
+
+  refresh() {
+    console.log("reloading page");
+    window.location.reload();
   }
 
   notes() {
@@ -44,6 +52,17 @@ export class DashboardComponent implements OnInit {
     this.labelService.getAllLabels().subscribe((response:any)=>{
         console.log(response.data);
         this.labels=response.data;
+    });
+  }
+
+  public dailogLabel(name:string) {
+    // const data = this.note;
+    // console.log("note value",this.note);
+    const dialogRef = this.dialog.open(LabelComponent, {
+      width: '500px'
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
     });
   }
 
