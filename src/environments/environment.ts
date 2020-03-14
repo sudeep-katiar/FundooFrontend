@@ -33,6 +33,7 @@ export const environment = {
 
   getLabels:'label/maptonote',
   getLabelsList:'label/alllabel',
+  createLabelUrl:'label/addlabel',
 
   addCollaboratorURL:'/addCollaborator'
 };
