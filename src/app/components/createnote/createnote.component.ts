@@ -22,6 +22,7 @@ export class CreatenoteComponent implements OnInit {
   }
 
   onSubmit() {
+    this.popup=false;
     if(this.note.title) {
       this.noteservice.addNote(this.note, this.Token).subscribe(notes=> {
         this.note = new Note();
@@ -39,7 +40,7 @@ export class CreatenoteComponent implements OnInit {
   }
 
 pinned(key, note) {
-  note.pinned = key === 'pinned' ? 1 : 0;
+  note.pinned = key == 'pinned' ? 1 : 0;
   this.noteservice.pinNotes(this.Token,this.noteId).subscribe(response => {
 
     console.log(response);

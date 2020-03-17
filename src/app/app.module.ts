@@ -32,7 +32,8 @@ import { LabelComponent } from './components/label/label.component';
 import { ReminderComponent } from './components/reminder/reminder.component';
 import { TrashComponent } from './components/trash/trash.component';
 import { CollaboratorComponent } from './components/collaborator/collaborator.component';
-import { AmazingTimePickerModule } from 'amazing-time-picker'; 
+import { AmazingTimePickerModule } from 'amazing-time-picker';
+import { EditlabelComponent } from './components/editlabel/editlabel.component'; 
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { AmazingTimePickerModule } from 'amazing-time-picker';
     LabelComponent,
     ReminderComponent,
     TrashComponent,
-    CollaboratorComponent
+    CollaboratorComponent,
+    EditlabelComponent
     
   ],
   imports: [

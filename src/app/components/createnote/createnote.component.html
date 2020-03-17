@@ -1,9 +1,6 @@
 <div class="main">
     <mat-card style=" width: 29em; border-radius: 13px;"  *ngIf="!popup" (click)="onPopup()" class="mat-card" fxLayout="row" >
-
         <input matInput class="searchBar" placeholder="take a note...">
-
-
     </mat-card>
 
     <mat-card  style=" width: 29em; border-radius: 13px;" *ngIf="popup" class="mat1-card" fxLayout="column" >
@@ -33,4 +30,5 @@
             <div (click)="onSubmit()"><button style="border-radius: 10px 10px 10px 10px; outline: none;" class="close">close</button></div>
         </div>
     </mat-card>
+    
 </div>

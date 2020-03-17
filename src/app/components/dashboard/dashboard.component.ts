@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { LabelserviceService } from 'src/app/service/labelservice.service';
 import { Label } from 'src/app/model/label.model';
 import { LabelComponent } from '../label/label.component';
+import { EditlabelComponent } from '../editlabel/editlabel.component';
+import { MatDialogRef } from '@angular/material';
 
 @Component({
   selector: 'app-dashboard',
@@ -13,7 +15,7 @@ export class DashboardComponent implements OnInit {
   labels:Label[];
   dialogref: any;
   dialog: any;
-  constructor(private router:Router,private labelService:LabelserviceService) { }
+  constructor(private router:Router,private labelService:LabelserviceService,public dialogRef: MatDialogRef<EditlabelComponent>) { }
 
   ngOnInit() {
     this.getAllLabelList();
@@ -56,14 +58,15 @@ export class DashboardComponent implements OnInit {
   }
 
   public dailogLabel(name:string) {
-    // const data = this.note;
+    // const data = this.note;edf
     // console.log("note value",this.note);
-    const dialogRef = this.dialog.open(LabelComponent, {
+    const dialogRef = this.dialog.open(EditlabelComponent, {
       width: '500px'
     });
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
     });
   }
+
 
 }
