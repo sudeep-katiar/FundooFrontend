@@ -72,7 +72,6 @@ export class DisplaynoteComponent implements OnInit {
   updateNote(newNote) {
     this.noteservice.updateNote(newNote, localStorage.getItem('token'), this.note.id).subscribe(response => {
       console.log(response.obj);
-      // this.dialogRef.close();
     },
       error => {
         console.log("error");
